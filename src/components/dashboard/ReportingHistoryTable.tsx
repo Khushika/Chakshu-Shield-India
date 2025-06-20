@@ -121,7 +121,11 @@ const ReportingHistoryTable = ({ filters }: ReportingHistoryTableProps) => {
               <TableCell>{getStatusBadge(report.status)}</TableCell>
               <TableCell>{getImpactBadge(report.impact)}</TableCell>
               <TableCell>
-                <Button variant="ghost" size="sm">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => handleViewDetails(report)}
+                >
                   View Details
                 </Button>
               </TableCell>
