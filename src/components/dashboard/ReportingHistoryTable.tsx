@@ -18,7 +18,7 @@ interface ReportingHistoryTableProps {
     fraudTypes: string[];
     severity: string[];
     location: string;
-    amountRange: any;
+    amountRange: { min?: number; max?: number };
   };
 }
 
