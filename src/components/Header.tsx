@@ -184,7 +184,7 @@ const Header = () => {
                     {/* Mobile Controls Section */}
                     <div className="lg:hidden">
                       <h3
-                        className={`text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide ${isRTL ? "text-right" : ""}`}
+                        className={`text-sm font-semibold text-gray-500 dark:text-light-yellow mb-3 uppercase tracking-wide ${isRTL ? "text-right" : ""}`}
                       >
                         {t.accessibility.accessibility || "Settings"}
                       </h3>
@@ -214,7 +214,7 @@ const Header = () => {
                           key={index}
                           to={item.to}
                           onClick={closeMobileMenu}
-                          className={`flex items-center py-3 px-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-india-saffron hover:text-white transition-colors focus-visible-ring ${isRTL ? "text-right" : ""}`}
+                          className={`flex items-center py-3 px-3 rounded-lg text-gray-700 dark:text-white hover:bg-india-saffron hover:text-white transition-colors focus-visible-ring ${isRTL ? "text-right" : ""}`}
                         >
                           <span className="font-medium">{item.label}</span>
                         </Link>
@@ -283,7 +283,7 @@ const Header = () => {
                                 {user.user_metadata?.full_name ||
                                   t.header.profile}
                               </p>
-                              <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
+                              <p className="text-xs text-gray-500 dark:text-light-yellow truncate">
                                 {user.email}
                               </p>
                             </div>
