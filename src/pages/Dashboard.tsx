@@ -16,6 +16,7 @@ import {
   BarChart,
   PieChart,
   RefreshCw,
+  Mic,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import QuickStatsCards from "@/components/dashboard/QuickStatsCards";
@@ -194,15 +195,27 @@ const Dashboard = () => {
                 Export Data
               </Button>
 
-              {/* New Report Button */}
-              <Button
-                onClick={handleNewReport}
-                className="bg-india-saffron hover:bg-saffron-600 text-white flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-200"
-                size="lg"
-              >
-                <Plus className="h-4 w-4" />
-                New Report
-              </Button>
+              {/* New Report Buttons */}
+              <div className="flex gap-2">
+                <Button
+                  onClick={handleNewReport}
+                  variant="outline"
+                  className="flex items-center gap-2"
+                  size="lg"
+                >
+                  <Plus className="h-4 w-4" />
+                  New Report
+                </Button>
+
+                <Button
+                  onClick={() => navigate("/voice-reporting")}
+                  className="bg-green-600 hover:bg-green-700 text-white flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-200"
+                  size="lg"
+                >
+                  <Mic className="h-4 w-4" />
+                  Record New Report
+                </Button>
+              </div>
             </div>
           </div>
         </div>
