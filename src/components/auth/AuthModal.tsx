@@ -8,6 +8,7 @@ import {
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
+import ConnectionStatus from "./ConnectionStatus";
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -43,6 +44,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
           </DialogTitle>
         </VisuallyHidden>
         <div className="relative">
+          <ConnectionStatus className="mb-4" />
           {mode === "login" ? (
             <LoginForm
               onSwitchToSignup={switchToSignup}
