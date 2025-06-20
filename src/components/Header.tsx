@@ -111,7 +111,7 @@ const Header = () => {
                 <h1 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
                   {t.header.title}
                 </h1>
-                <p className="text-xs lg:text-sm text-gray-600 dark:text-gray-300 hidden sm:block">
+                <p className="text-xs lg:text-sm text-gray-600 dark:text-light-yellow hidden sm:block">
                   {t.header.subtitle}
                 </p>
               </div>
@@ -127,7 +127,7 @@ const Header = () => {
                 <Link
                   key={index}
                   to={item.to}
-                  className="text-gray-700 dark:text-gray-300 hover:text-india-saffron dark:hover:text-india-saffron font-medium transition-colors focus-visible-ring text-xs xl:text-sm 2xl:text-base whitespace-nowrap px-1 xl:px-2 py-1 rounded"
+                  className="text-gray-700 dark:text-white hover:text-india-saffron dark:hover:text-light-yellow font-medium transition-colors focus-visible-ring text-xs xl:text-sm 2xl:text-base whitespace-nowrap px-1 xl:px-2 py-1 rounded"
                 >
                   {item.label}
                 </Link>
@@ -140,7 +140,7 @@ const Header = () => {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="text-gray-700 dark:text-gray-300 hover:text-india-saffron dark:hover:text-india-saffron font-medium text-xs xl:text-sm 2xl:text-base px-1 xl:px-2 py-1"
+                      className="text-gray-700 dark:text-white hover:text-india-saffron dark:hover:text-light-yellow font-medium text-xs xl:text-sm 2xl:text-base px-1 xl:px-2 py-1"
                     >
                       More
                     </Button>
