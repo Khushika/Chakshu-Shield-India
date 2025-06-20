@@ -67,13 +67,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             {title}
           </h3>
 
-          <p className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 sm:mb-4 leading-relaxed line-clamp-2">
+          <p className="text-xs sm:text-sm font-medium text-gray-700 dark:text-white mb-3 sm:mb-4 leading-relaxed line-clamp-2">
             {subtitle}
           </p>
         </div>
 
         {/* Description - Flex grow to push button to bottom */}
-        <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 flex-grow line-clamp-3">
+        <p className="text-gray-600 dark:text-light-yellow text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 flex-grow line-clamp-3">
           {description}
         </p>
 

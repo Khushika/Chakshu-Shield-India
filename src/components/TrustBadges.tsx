@@ -29,7 +29,7 @@ const TrustBadges = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
             Trusted by Millions of Indians
           </h2>
-          <p className="text-gray-300 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-300 dark:text-light-yellow max-w-2xl mx-auto">
             Your security and privacy are our top priorities
           </p>
         </div>
@@ -42,7 +42,7 @@ const TrustBadges = () => {
             >
               <div className="text-3xl mb-3">{badge.icon}</div>
               <h3 className="text-white font-semibold mb-1">{badge.title}</h3>
-              <p className="text-gray-300 dark:text-gray-400 text-sm">
+              <p className="text-gray-300 dark:text-light-yellow text-sm">
                 {badge.subtitle}
               </p>
             </div>
@@ -55,13 +55,13 @@ const TrustBadges = () => {
             In partnership with
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <div className="text-white dark:text-gray-300 text-sm font-medium">
+            <div className="text-white dark:text-white text-sm font-medium">
               Ministry of Electronics & IT
             </div>
-            <div className="text-white dark:text-gray-300 text-sm font-medium">
+            <div className="text-white dark:text-white text-sm font-medium">
               Department of Telecommunications
             </div>
-            <div className="text-white dark:text-gray-300 text-sm font-medium">
+            <div className="text-white dark:text-white text-sm font-medium">
               TRAI
             </div>
           </div>
