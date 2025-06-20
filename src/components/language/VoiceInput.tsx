@@ -81,7 +81,7 @@ const languageConfigs = {
     code: "ta-IN",
     name: "தமிழ்",
     sampleText:
-      "நான் நே��்று ஒரு மோசடி அழைப்பு வந்ததை தெரிவிக்க விரும்புகிறேன். யாரோ என் வங்கியின் பெயரில் என் PIN கேட்டார்கள்।",
+      "நான் நேற்று ஒரு மோசடி அழைப்பு வந்ததை தெரிவிக்க விரும்புகிறேன். யாரோ என் வங்கியின் பெயரில் என் PIN கேட்டார்கள்।",
     prompts: {
       start: "பேசத் தொடங்க மைக்ரோஃபோனைக் கிளிக் செய்யவும்",
       listening: "கேட்கிறேன்... தெளிவாக பேசுங்கள்",
@@ -93,7 +93,7 @@ const languageConfigs = {
     code: "gu-IN",
     name: "ગુજરાતી",
     sampleText:
-      "હું ગઈકાલે આવેલા એક છેતરપિંડીના કોલની જાણ કરવા માંગુ છું. કોઈએ મારી બેંકનું નામ લઈને મારો PIN માગ્યો હતો।",
+      "હું ગઈકાલે આવેલા એક છેતરપિંડીના કોલની જાણ કરવા માંગુ છ��ં. કોઈએ મારી બેંકનું નામ લઈને મારો PIN માગ્યો હતો।",
     prompts: {
       start: "બોલવાનું શરુ કરવા માટે માઇક્રોફોન પર ક્લિક કરો",
       listening: "સાંભળી રહ્યો છું... સ્પષ્ટ બોલો",
@@ -129,10 +129,10 @@ const languageConfigs = {
     code: "mr-IN",
     name: "मराठी",
     sampleText:
-      "मला काल आलेल्या फसवणूक कॉलबद्दल तक्रार करायची आहे. कोणीतरी माझ्या बँकेच्या नावाने माझा PIN विचारला होता।",
+      "मला काल आलेल्या फसवणूक कॉलबद्दल तक्रार करायची ���हे. कोणीतरी माझ्या बँकेच्या नावाने माझा PIN विचारला होता।",
     prompts: {
       start: "बोलण्यास सुरुवात करण्यासाठी मायक्रोफोनवर क्लिक करा",
-      listening: "ऐकत आहे... ���्पष्टपणे बोला",
+      listening: "ऐकत आहे... स्पष्टपणे बोला",
       processing: "तुमचे भाषण समजून घेत आहे...",
       ready: "व्हॉइस इनपुट सुरू करण्यासाठी क्लिक करा",
     },
@@ -146,7 +146,7 @@ const languageConfigs = {
       start: "ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮਾਈਕ੍ਰੋਫੋਨ ਤੇ ਕਲਿੱਕ ਕਰੋ",
       listening: "ਸੁਣ ਰਿਹਾ ਹਾਂ... ਸਾਫ਼ ਬੋਲੋ",
       processing: "ਤੁਹਾਡੀ ਆਵਾਜ਼ ਸਮਝ ਰਿਹਾ ਹਾਂ...",
-      ready: "ਵਾਇਸ ਇਨਪੁੱਟ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ",
+      ready: "ਵਾਇਸ ਇਨਪੁੱਟ ਸ਼ੁ���ੂ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ",
     },
   },
   ur: {
@@ -191,6 +191,18 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
     languageConfigs.en;
 
   useEffect(() => {
+    // Check browser compatibility
+    if (
+      !("webkitSpeechRecognition" in window) &&
+      !("SpeechRecognition" in window)
+    ) {
+      setError(
+        "Voice input requires Chrome, Edge, or Safari browser for best results.",
+      );
+      setHasPermission(false);
+      return;
+    }
+
     checkMicrophonePermission();
     setupSpeechRecognition();
 
