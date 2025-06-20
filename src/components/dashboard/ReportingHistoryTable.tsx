@@ -133,6 +133,12 @@ const ReportingHistoryTable = ({ filters }: ReportingHistoryTableProps) => {
           ))}
         </TableBody>
       </Table>
+
+      <ReportDetailsModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        report={selectedReport}
+      />
     </div>
   );
 };
