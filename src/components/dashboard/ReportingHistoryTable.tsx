@@ -20,6 +20,9 @@ interface ReportingHistoryTableProps {
 }
 
 const ReportingHistoryTable = ({ filters }: ReportingHistoryTableProps) => {
+  const [selectedReport, setSelectedReport] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const reports = [
     {
       id: "RPT-001",
