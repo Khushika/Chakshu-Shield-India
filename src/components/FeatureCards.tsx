@@ -44,7 +44,7 @@ const FeatureCards = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Powerful Features for Your Protection
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-white max-w-2xl mx-auto">
             Everything you need to report, track, and stay protected from fraud
           </p>
         </div>
@@ -72,7 +72,7 @@ const FeatureCards = () => {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-gray-800 dark:group-hover:text-gray-100">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-white leading-relaxed mb-6">
                   {feature.description}
                 </p>
 

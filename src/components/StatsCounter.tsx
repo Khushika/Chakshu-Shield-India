@@ -39,7 +39,7 @@ const Counter = ({ end, duration, label, suffix = "" }: CounterProps) => {
         {count.toLocaleString("en-IN")}
         {suffix}
       </div>
-      <div className="text-gray-600 dark:text-gray-300 font-medium">
+      <div className="text-gray-600 dark:text-white font-medium">
         {label}
       </div>
     </div>
@@ -54,7 +54,7 @@ const StatsCounter = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Making India Safer, One Report at a Time
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-white max-w-2xl mx-auto">
             Real-time impact of our collective fight against fraud
           </p>
         </div>
@@ -82,7 +82,7 @@ const StatsCounter = () => {
             <div className="text-3xl sm:text-4xl font-bold text-green-600 dark:text-green-400 mb-2">
               ₹890Cr+
             </div>
-            <div className="text-gray-600 dark:text-gray-300 font-medium">
+            <div className="text-gray-600 dark:text-white font-medium">
               Money Saved
             </div>
           </div>
