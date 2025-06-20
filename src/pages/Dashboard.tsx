@@ -323,8 +323,10 @@ const Dashboard = () => {
                     <PieChart className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Community</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
+                      Community
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-white">
                       Join fraud prevention discussions
                     </p>
                   </div>
@@ -341,8 +343,10 @@ const Dashboard = () => {
                     <Bell className="h-6 w-6 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Learn & Protect</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
+                      Learn & Protect
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-white">
                       Educational resources
                     </p>
                   </div>
