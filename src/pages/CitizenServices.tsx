@@ -141,7 +141,7 @@ const CitizenServices = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               Available Services
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-gray-600 dark:text-white text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed px-4">
               Comprehensive digital services to protect citizens from
               telecommunications fraud and ensure secure communication
             </p>
@@ -204,7 +204,7 @@ const CitizenServices = () => {
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
                   Need Help?
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
+                <p className="text-gray-600 dark:text-white text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
                   Our support team is available 24/7 to help you with any
                   questions about these services.
                 </p>
@@ -235,25 +235,25 @@ const CitizenServices = () => {
               <div className="grid grid-cols-2 gap-3">
                 <a
                   href="/dashboard"
-                  className="bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg text-center text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-700 touch-target"
+                  className="bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg text-center text-xs sm:text-sm font-medium text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-700 touch-target"
                 >
                   Dashboard
                 </a>
                 <a
                   href="/reports-management"
-                  className="bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg text-center text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-700 touch-target"
+                  className="bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg text-center text-xs sm:text-sm font-medium text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-700 touch-target"
                 >
                   My Reports
                 </a>
                 <a
                   href="/search"
-                  className="bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg text-center text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-700 touch-target"
+                  className="bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg text-center text-xs sm:text-sm font-medium text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-700 touch-target"
                 >
                   Search
                 </a>
                 <a
                   href="/community"
-                  className="bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg text-center text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-700 touch-target"
+                  className="bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg text-center text-xs sm:text-sm font-medium text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-700 touch-target"
                 >
                   Community
                 </a>
