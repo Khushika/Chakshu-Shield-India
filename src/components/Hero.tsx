@@ -24,7 +24,7 @@ const Hero = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in">
+          <p className="text-xl sm:text-2xl text-gray-600 dark:text-white mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in">
             Join millions of Indians in the fight against cyber fraud. Report
             suspicious calls and messages to protect yourself and your
             community.
@@ -48,7 +48,7 @@ const Hero = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-8 mt-16 text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex flex-wrap justify-center items-center gap-8 mt-16 text-sm text-gray-500 dark:text-light-yellow">
             <div className="flex items-center">
               <div className="w-6 h-6 bg-green-500 dark:bg-green-600 rounded-full flex items-center justify-center mr-2">
                 <span className="text-white text-xs">✓</span>
