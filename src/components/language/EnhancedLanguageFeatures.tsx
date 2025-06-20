@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import LanguageSelector from "./LanguageSelector";
 import VoiceInput from "./VoiceInput";
+import VoiceInputDemo from "./VoiceInputDemo";
 import RegionalContent from "./RegionalContent";
 import {
   Select,
@@ -168,6 +169,9 @@ const EnhancedLanguageFeatures = () => {
               </p>
             </div>
           </div>
+
+          {/* Voice Input Demo */}
+          <VoiceInputDemo />
         </CardContent>
       </Card>
 
