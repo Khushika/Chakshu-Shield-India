@@ -76,10 +76,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setLoading(true);
 
       // Check if we can reach Supabase first
-      const connectionTest = await fetch(`${supabase.supabaseUrl}/rest/v1/`, {
+      const SUPABASE_URL = "https://kdydzhpskpmjzsoznxsu.supabase.co";
+      const SUPABASE_KEY =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkeWR6aHBza3Btanpzb3pueHN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkzNDk4NDksImV4cCI6MjA2NDkyNTg0OX0.JvG5vrfC_kV93RCojq0YMKyCp28kh4EeNA7-FmmNOBs";
+
+      const connectionTest = await fetch(`${SUPABASE_URL}/rest/v1/`, {
         method: "HEAD",
         headers: {
-          apikey: supabase.supabaseKey,
+          apikey: SUPABASE_KEY,
         },
       }).catch(() => null);
 
@@ -159,10 +163,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setLoading(true);
 
       // Check connectivity first
-      const connectionTest = await fetch(`${supabase.supabaseUrl}/rest/v1/`, {
+      const SUPABASE_URL = "https://kdydzhpskpmjzsoznxsu.supabase.co";
+      const SUPABASE_KEY =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkeWR6aHBza3Btanpzb3pueHN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkzNDk4NDksImV4cCI6MjA2NDkyNTg0OX0.JvG5vrfC_kV93RCojq0YMKyCp28kh4EeNA7-FmmNOBs";
+
+      const connectionTest = await fetch(`${SUPABASE_URL}/rest/v1/`, {
         method: "HEAD",
         headers: {
-          apikey: supabase.supabaseKey,
+          apikey: SUPABASE_KEY,
         },
       }).catch(() => null);
 
@@ -248,10 +256,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const resetPassword = async (email: string) => {
     try {
       // Check connectivity first
-      const connectionTest = await fetch(`${supabase.supabaseUrl}/rest/v1/`, {
+      const SUPABASE_URL = "https://kdydzhpskpmjzsoznxsu.supabase.co";
+      const SUPABASE_KEY =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkeWR6aHBza3Btanpzb3pueHN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkzNDk4NDksImV4cCI6MjA2NDkyNTg0OX0.JvG5vrfC_kV93RCojq0YMKyCp28kh4EeNA7-FmmNOBs";
+
+      const connectionTest = await fetch(`${SUPABASE_URL}/rest/v1/`, {
         method: "HEAD",
         headers: {
-          apikey: supabase.supabaseKey,
+          apikey: SUPABASE_KEY,
         },
       }).catch(() => null);
 
