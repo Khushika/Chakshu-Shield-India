@@ -69,9 +69,9 @@ const languageConfigs = {
     code: "te-IN",
     name: "తెలుగు",
     sampleText:
-      "నేను నిన్న ఒక మోసపూరిత కాల్ వచ్చిందని రిపోర్ట్ చేయాలని అనుకుంటున్నాను। ఎవరో నా బ్యాంక్ పేరు చెప్పి నా PIN అడ��గారు।",
+      "నేను నిన్న ఒక మోసపూరిత కాల్ వచ్చిందని రిపోర్ట్ చేయాలని అనుకుంటున్నాను। ఎవరో నా బ్యాంక్ పేరు చెప్పి నా PIN అడిగారు।",
     prompts: {
-      start: "మాట్లాడటం ప్రారంభించ���ానికి మైక్రోఫోన్‌పై క్లిక్ చేయండి",
+      start: "మాట్లాడటం ప్రారంభించడానికి మైక్రోఫోన్‌పై క్లిక్ చేయండి",
       listening: "వింటున్నాను... స్పష్టంగా మాట్లాడండి",
       processing: "మీ మాటలను అర్థం చేసుకుంటున్నాను...",
       ready: "వాయిస్ ఇన్‌పుట్ ప్రారంభించడానికి క్లిక్ చేయండి",
@@ -120,9 +120,9 @@ const languageConfigs = {
       "ഇന്നലെ വന്ന ഒരു തട്ടിപ്പ് കോളിനെ കുറിച്ച് റിപ്പോർട്ട് ചെയ്യാൻ ആഗ്രഹിക്കുന്നു. ആരോ എന്റെ ബാങ്കിന്റെ പേരിൽ എന്റെ PIN ചോദിച്ചു.",
     prompts: {
       start: "സംസാരിക്കാൻ തുടങ്ങാൻ മൈക്രോഫോണിൽ ക്ലിക്ക് ചെയ്യുക",
-      listening: "കേൾക്കുന്നു... വ്യക്��മായി സംസാരിക്കുക",
+      listening: "കേൾക്കുന്നു... വ്യക്തമായി സംസാരിക്കുക",
       processing: "നിങ്ങളുടെ സംസാരം മനസ്സിലാക്കുന്നു...",
-      ready: "വോയ്‌സ് ഇൻപുട്ട് ആരംഭിക്കാൻ ക്ലിക്ക് ച���യ്യുക",
+      ready: "വോയ്‌സ് ഇൻപുട്ട് ആരംഭിക്കാൻ ക്ലിക്ക് ചെയ്യുക",
     },
   },
   mr: {
@@ -143,8 +143,8 @@ const languageConfigs = {
     sampleText:
       "ਮੈਂ ਕੱਲ੍ਹ ਆਈ ਇੱਕ ਧੋਖਾਧੜੀ ਕਾਲ ਬਾਰੇ ਰਿਪੋਰਟ ਕਰਨਾ ਚਾਹੁੰਦਾ ਹਾਂ। ਕਿਸੇ ਨੇ ਮੇਰੇ ਬੈਂਕ ਦੇ ਨਾਮ ਤੇ ਮੇਰਾ PIN ਮੰਗਿਆ ਸੀ।",
     prompts: {
-      start: "ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮਾਈਕ੍ਰੋਫੋਨ ਤੇ ਕਲਿੱਕ ਕਰ��",
-      listening: "ਸੁਣ ਰਿਹਾ ਹਾਂ... ਸਾਫ਼ ਬੋਲੋ",
+      start: "ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮਾਈਕ੍ਰੋਫੋਨ ਤੇ ਕਲਿੱਕ ਕਰੋ",
+      listening: "ਸੁਣ ਰਿ���ਾ ਹਾਂ... ਸਾਫ਼ ਬੋਲੋ",
       processing: "ਤੁਹਾਡੀ ਆਵਾਜ਼ ਸਮਝ ਰਿਹਾ ਹਾਂ...",
       ready: "ਵਾਇਸ ਇਨਪੁੱਟ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ",
     },
@@ -178,6 +178,8 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
   const [hasPermission, setHasPermission] = useState<boolean | null>(null);
   const [error, setError] = useState<string>("");
   const [confidence, setConfidence] = useState(0);
+  const [speechDetected, setSpeechDetected] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -267,11 +269,19 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
         (window as any).SpeechRecognition;
       recognitionRef.current = new SpeechRecognition();
 
-      // Configure recognition settings
+      // Configure recognition settings for better sensitivity
       recognitionRef.current.continuous = true;
       recognitionRef.current.interimResults = true;
       recognitionRef.current.maxAlternatives = 3;
       recognitionRef.current.lang = currentLang.code;
+
+      // Additional settings for better speech detection
+      if ("grammars" in recognitionRef.current) {
+        // Some browsers support grammar lists for better recognition
+        recognitionRef.current.grammars = new (
+          window as any
+        ).webkitSpeechGrammarList();
+      }
 
       // Handle recognition results
       recognitionRef.current.onresult = (event: any) => {
@@ -415,6 +425,21 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
       recognitionRef.current.onspeechstart = () => {
         console.log("Speech detected");
         setIsProcessing(false);
+        setSpeechDetected(true);
+        setError(""); // Clear any previous errors
+      };
+
+      // Handle sound start (any audio detected)
+      recognitionRef.current.onsoundstart = () => {
+        console.log("Sound detected");
+        setSpeechDetected(true);
+      };
+
+      // Handle audio start
+      recognitionRef.current.onaudiostart = () => {
+        console.log("Audio input started");
+        setSpeechDetected(false);
+        setRetryCount(0);
       };
     } catch (error) {
       console.error("Failed to setup speech recognition:", error);
