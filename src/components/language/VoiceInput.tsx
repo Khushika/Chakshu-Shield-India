@@ -69,9 +69,9 @@ const languageConfigs = {
     code: "te-IN",
     name: "తెలుగు",
     sampleText:
-      "నేను నిన్న ఒక మోసపూరిత కాల్ వచ్చిందని రిపోర్ట్ చేయాలని అనుకుంటున్నాను। ఎవరో నా బ్యాంక్ పేరు చెప్పి నా PIN అడిగారు।",
+      "నేను నిన్న ఒక మోసపూరిత కాల్ వచ్చిందని రిపోర్ట్ చేయాలని అనుకుంటున్నాను। ఎవరో నా బ్యాంక్ పేరు చెప్పి నా PIN అడ��గారు।",
     prompts: {
-      start: "మాట్లాడటం ప్రారంభించడానికి మైక్రోఫోన్‌పై క్లిక్ చేయండి",
+      start: "మాట్లాడటం ప్రారంభించ���ానికి మైక్రోఫోన్‌పై క్లిక్ చేయండి",
       listening: "వింటున్నాను... స్పష్టంగా మాట్లాడండి",
       processing: "మీ మాటలను అర్థం చేసుకుంటున్నాను...",
       ready: "వాయిస్ ఇన్‌పుట్ ప్రారంభించడానికి క్లిక్ చేయండి",
@@ -93,7 +93,7 @@ const languageConfigs = {
     code: "gu-IN",
     name: "ગુજરાતી",
     sampleText:
-      "હું ગઈકાલે આવેલા એક છેતરપિંડીના કોલની જાણ કરવા માંગુ છ��ં. કોઈએ મારી બેંકનું નામ લઈને મારો PIN માગ્યો હતો।",
+      "હું ગઈકાલે આવેલા એક છેતરપિંડીના કોલની જાણ કરવા માંગુ છું. કોઈએ મારી બેંકનું નામ લઈને મારો PIN માગ્યો હતો।",
     prompts: {
       start: "બોલવાનું શરુ કરવા માટે માઇક્રોફોન પર ક્લિક કરો",
       listening: "સાંભળી રહ્યો છું... સ્પષ્ટ બોલો",
@@ -120,16 +120,16 @@ const languageConfigs = {
       "ഇന്നലെ വന്ന ഒരു തട്ടിപ്പ് കോളിനെ കുറിച്ച് റിപ്പോർട്ട് ചെയ്യാൻ ആഗ്രഹിക്കുന്നു. ആരോ എന്റെ ബാങ്കിന്റെ പേരിൽ എന്റെ PIN ചോദിച്ചു.",
     prompts: {
       start: "സംസാരിക്കാൻ തുടങ്ങാൻ മൈക്രോഫോണിൽ ക്ലിക്ക് ചെയ്യുക",
-      listening: "കേൾക്കുന്നു... വ്യക്തമായി സംസാരിക്കുക",
+      listening: "കേൾക്കുന്നു... വ്യക്��മായി സംസാരിക്കുക",
       processing: "നിങ്ങളുടെ സംസാരം മനസ്സിലാക്കുന്നു...",
-      ready: "വോയ്‌സ് ഇൻപുട്ട് ആരംഭിക്കാൻ ക്ലിക്ക് ചെയ്യുക",
+      ready: "വോയ്‌സ് ഇൻപുട്ട് ആരംഭിക്കാൻ ക്ലിക്ക് ച���യ്യുക",
     },
   },
   mr: {
     code: "mr-IN",
     name: "मराठी",
     sampleText:
-      "मला काल आलेल्या फसवणूक कॉलबद्दल तक्रार करायची ���हे. कोणीतरी माझ्या बँकेच्या नावाने माझा PIN विचारला होता।",
+      "मला काल आलेल्या फसवणूक कॉलबद्दल तक्रार करायची आहे. कोणीतरी माझ्या बँकेच्या नावाने माझा PIN विचारला होता।",
     prompts: {
       start: "बोलण्यास सुरुवात करण्यासाठी मायक्रोफोनवर क्लिक करा",
       listening: "ऐकत आहे... स्पष्टपणे बोला",
@@ -143,10 +143,10 @@ const languageConfigs = {
     sampleText:
       "ਮੈਂ ਕੱਲ੍ਹ ਆਈ ਇੱਕ ਧੋਖਾਧੜੀ ਕਾਲ ਬਾਰੇ ਰਿਪੋਰਟ ਕਰਨਾ ਚਾਹੁੰਦਾ ਹਾਂ। ਕਿਸੇ ਨੇ ਮੇਰੇ ਬੈਂਕ ਦੇ ਨਾਮ ਤੇ ਮੇਰਾ PIN ਮੰਗਿਆ ਸੀ।",
     prompts: {
-      start: "ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮਾਈਕ੍ਰੋਫੋਨ ਤੇ ਕਲਿੱਕ ਕਰੋ",
+      start: "ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮਾਈਕ੍ਰੋਫੋਨ ਤੇ ਕਲਿੱਕ ਕਰ��",
       listening: "ਸੁਣ ਰਿਹਾ ਹਾਂ... ਸਾਫ਼ ਬੋਲੋ",
       processing: "ਤੁਹਾਡੀ ਆਵਾਜ਼ ਸਮਝ ਰਿਹਾ ਹਾਂ...",
-      ready: "ਵਾਇਸ ਇਨਪੁੱਟ ਸ਼ੁ���ੂ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ",
+      ready: "ਵਾਇਸ ਇਨਪੁੱਟ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ",
     },
   },
   ur: {
@@ -279,6 +279,11 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
         let interimTranscript = "";
         let maxConfidence = 0;
 
+        // Reset the no-speech detection since we got results
+        if (timerRef.current) {
+          clearTimeout(timerRef.current);
+        }
+
         for (let i = event.resultIndex; i < event.results.length; i++) {
           const result = event.results[i];
           const transcript = result[0].transcript;
@@ -288,26 +293,34 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
             finalTranscript += transcript;
             maxConfidence = Math.max(maxConfidence, confidence);
           } else {
-            interimTranscript += transcript;
+            interimTranscription = transcript;
           }
         }
 
         // Update transcription
-        const currentTranscription = finalTranscript || interimTranscript;
         setTranscription((prev) => {
           // Append new final transcript to existing content
           if (finalTranscript) {
-            return prev + finalTranscript + " ";
+            const newContent =
+              prev.replace(/\[.*?\]$/, "").trim() +
+              (prev ? " " : "") +
+              finalTranscript;
+            return newContent;
           }
           // For interim results, show them temporarily
           return (
             prev.replace(/\[.*?\]$/, "") +
-            (interimTranscript ? `[${interimTranscript}]` : "")
+            (interimTranscription ? ` [${interimTranscription}]` : "")
           );
         });
 
         if (maxConfidence > 0) {
           setConfidence(Math.round(maxConfidence * 100));
+        }
+
+        // If we got speech, clear any error state
+        if (finalTranscript || interimTranscription) {
+          setError("");
         }
       };
 
@@ -332,45 +345,65 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
       recognitionRef.current.onerror = (event: any) => {
         console.error("Speech recognition error:", event.error);
         let errorMessage = "Speech recognition error occurred.";
+        let shouldRetry = false;
 
         switch (event.error) {
           case "no-speech":
-            errorMessage = "No speech detected. Please try speaking again.";
+            errorMessage =
+              "No speech detected. Please speak closer to the microphone or try again.";
+            shouldRetry = true;
             break;
           case "audio-capture":
             errorMessage =
-              "Microphone not available. Please check your microphone.";
+              "Microphone not available. Please check your microphone connection.";
             break;
           case "not-allowed":
             errorMessage =
-              "Microphone permission denied. Please allow microphone access.";
+              "Microphone permission denied. Please allow microphone access and try again.";
             break;
           case "network":
             errorMessage =
-              "Network error. Please check your internet connection.";
+              "Network error. Please check your internet connection and try again.";
+            shouldRetry = true;
             break;
           case "service-not-allowed":
-            errorMessage = "Speech recognition service is not available.";
+            errorMessage =
+              "Speech recognition service is not available. Please try again later.";
             break;
           case "bad-grammar":
-            errorMessage = "Speech recognition grammar error.";
+            errorMessage =
+              "Speech recognition grammar error. Please try again.";
+            shouldRetry = true;
             break;
           case "language-not-supported":
             errorMessage = `Language ${currentLang.name} is not supported. Please try English.`;
             break;
+          case "aborted":
+            // Don't show error for intentional stops
+            return;
           default:
             errorMessage = `Speech recognition error: ${event.error}`;
+            shouldRetry = true;
         }
 
         setError(errorMessage);
         setIsRecording(false);
         setIsProcessing(false);
 
-        toast({
-          title: "Speech Recognition Error",
-          description: errorMessage,
-          variant: "destructive",
-        });
+        // For specific errors, provide helpful toast with retry option
+        if (event.error === "no-speech") {
+          toast({
+            title: "No Speech Detected",
+            description:
+              "Please speak closer to your microphone and ensure your voice is clear. The microphone is sensitive and requires clear speech.",
+          });
+        } else {
+          toast({
+            title: "Speech Recognition Error",
+            description: errorMessage,
+            variant: "destructive",
+          });
+        }
       };
 
       // Handle sound start
