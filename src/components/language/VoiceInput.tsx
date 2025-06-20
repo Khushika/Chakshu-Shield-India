@@ -69,10 +69,10 @@ const languageConfigs = {
     code: "te-IN",
     name: "తెలుగు",
     sampleText:
-      "నేను నిన్న ఒక మోసపూరిత కాల్ ���చ్చిందని రిపోర్ట్ చేయాలని అనుకుంటున్నాను। ఎవరో నా బ్యాంక్ పేరు చెప్పి నా PIN అడిగారు।",
+      "నేను నిన్న ఒక మోసపూరిత కాల్ వచ్చిందని రిపోర్ట్ చేయాలని అనుకుంటున్నాను। ఎవరో నా బ్యాంక్ పేరు చెప్పి నా PIN అడిగారు।",
     prompts: {
       start: "మాట్లాడటం ప్రారంభించడానికి మైక్రోఫోన్‌పై క్లిక్ చేయండి",
-      listening: "వింటున్నాను... స్పష్టంగా మాట్లాడండి",
+      listening: "వింటున్��ాను... స్పష్టంగా మాట్లాడండి",
       processing: "మీ మాటలను అర్థం చేసుకుంటున్నాను...",
       ready: "వాయిస్ ఇన్‌పుట్ ప్రారంభించడానికి క్లిక్ చేయండి",
     },
@@ -84,7 +84,7 @@ const languageConfigs = {
       "நான் நேற்று ஒரு மோசடி அழைப்பு வந்ததை தெரிவிக்க விரும்புகிறேன். யாரோ என் வங்கியின் பெயரில் என் PIN கேட்டார்கள்।",
     prompts: {
       start: "பேசத் தொடங்க மைக்ரோஃபோனைக் கிளிக் செய்யவும்",
-      listening: "கேட��கிறேன்... தெளிவாக பேசுங்கள்",
+      listening: "கேட்கிறேன்... தெளிவாக பேசுங்கள்",
       processing: "உங்கள் பேச்சை புரிந்துகொள்கிறேன்...",
       ready: "குரல் உள்ளீட்டைத் தொடங்க கிளிக் செய்யவும்",
     },
@@ -105,7 +105,7 @@ const languageConfigs = {
     code: "kn-IN",
     name: "ಕನ್ನಡ",
     sampleText:
-      "ನನಗೆ ನಿನ್ನೆ ಬಂದ ವಂಚನೆ ಕರೆಯ ಬಗ್ಗೆ ವರದಿ ಮಾಡಲು ���ಯಸುತ್ತೇನೆ. ಯಾರೋ ನನ್ನ ಬ್ಯಾಂಕಿನ ಹೆಸರಿನಲ್ಲಿ ನನ್ನ PIN ಕೇಳಿದ್ದರು।",
+      "ನನಗೆ ನಿನ್ನೆ ಬಂದ ವಂಚನೆ ಕರೆಯ ಬಗ್ಗೆ ವರದಿ ಮಾಡಲು ಬಯಸುತ್ತೇನೆ. ಯಾರೋ ನನ್ನ ಬ್ಯಾಂಕಿನ ಹೆಸರಿನಲ್ಲಿ ನನ್ನ PIN ಕೇಳಿದ್ದರು।",
     prompts: {
       start: "ಮಾತನಾಡಲು ಪ್ರಾರಂಭಿಸಲು ಮೈಕ್ರೋಫೋನ್ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ",
       listening: "ಆಲಿಸುತ್ತಿದ್ದೇನೆ... ಸ್ಪಷ್ಟವಾಗಿ ಮಾತನಾಡಿ",
@@ -155,7 +155,7 @@ const languageConfigs = {
     sampleText:
       "میں کل آئی ایک دھوکہ دہی کی کال کی رپورٹ کرنا چاہتا ہوں۔ کسی نے میرے بینک کے نام سے میرا PIN مانگا تھا۔",
     prompts: {
-      start: "بولنا شروع کرنے کے لیے مائیکروفون پر کلک کریں",
+      start: "بولنا ش��وع کرنے کے لیے مائیکروفون پر کلک کریں",
       listening: "سن رہا ہوں... واضح بولیں",
       processing: "آپ کی آواز سمجھ رہا ہوں...",
       ready: "وائس ان پٹ شروع کرنے کے لیے کلک کریں",
@@ -238,45 +238,144 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
   };
 
   const setupSpeechRecognition = () => {
-    if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
+    // Check for speech recognition support
+    if (
+      !("webkitSpeechRecognition" in window) &&
+      !("SpeechRecognition" in window)
+    ) {
+      setError(
+        "Speech recognition is not supported in this browser. Please use Chrome, Edge, or Safari.",
+      );
+      return;
+    }
+
+    try {
       const SpeechRecognition =
         (window as any).webkitSpeechRecognition ||
         (window as any).SpeechRecognition;
       recognitionRef.current = new SpeechRecognition();
 
+      // Configure recognition settings
       recognitionRef.current.continuous = true;
       recognitionRef.current.interimResults = true;
+      recognitionRef.current.maxAlternatives = 3;
       recognitionRef.current.lang = currentLang.code;
 
+      // Handle recognition results
       recognitionRef.current.onresult = (event: any) => {
         let finalTranscript = "";
         let interimTranscript = "";
+        let maxConfidence = 0;
 
         for (let i = event.resultIndex; i < event.results.length; i++) {
-          const transcript = event.results[i][0].transcript;
-          const confidence = event.results[i][0].confidence;
+          const result = event.results[i];
+          const transcript = result[0].transcript;
+          const confidence = result[0].confidence || 0;
 
-          if (event.results[i].isFinal) {
+          if (result.isFinal) {
             finalTranscript += transcript;
-            setConfidence(Math.round(confidence * 100));
+            maxConfidence = Math.max(maxConfidence, confidence);
           } else {
             interimTranscript += transcript;
           }
         }
 
-        setTranscription(finalTranscript || interimTranscript);
+        // Update transcription
+        const currentTranscription = finalTranscript || interimTranscript;
+        setTranscription((prev) => {
+          // Append new final transcript to existing content
+          if (finalTranscript) {
+            return prev + finalTranscript + " ";
+          }
+          // For interim results, show them temporarily
+          return (
+            prev.replace(/\[.*?\]$/, "") +
+            (interimTranscript ? `[${interimTranscript}]` : "")
+          );
+        });
+
+        if (maxConfidence > 0) {
+          setConfidence(Math.round(maxConfidence * 100));
+        }
       };
 
+      // Handle recognition start
+      recognitionRef.current.onstart = () => {
+        setError("");
+        setIsProcessing(false);
+        console.log("Speech recognition started");
+      };
+
+      // Handle recognition end
       recognitionRef.current.onend = () => {
+        console.log("Speech recognition ended");
         setIsRecording(false);
         setIsProcessing(false);
+
+        // Clean up interim results brackets
+        setTranscription((prev) => prev.replace(/\[.*?\]$/g, "").trim());
       };
 
+      // Handle recognition errors
       recognitionRef.current.onerror = (event: any) => {
-        setError(`Speech recognition error: ${event.error}`);
+        console.error("Speech recognition error:", event.error);
+        let errorMessage = "Speech recognition error occurred.";
+
+        switch (event.error) {
+          case "no-speech":
+            errorMessage = "No speech detected. Please try speaking again.";
+            break;
+          case "audio-capture":
+            errorMessage =
+              "Microphone not available. Please check your microphone.";
+            break;
+          case "not-allowed":
+            errorMessage =
+              "Microphone permission denied. Please allow microphone access.";
+            break;
+          case "network":
+            errorMessage =
+              "Network error. Please check your internet connection.";
+            break;
+          case "service-not-allowed":
+            errorMessage = "Speech recognition service is not available.";
+            break;
+          case "bad-grammar":
+            errorMessage = "Speech recognition grammar error.";
+            break;
+          case "language-not-supported":
+            errorMessage = `Language ${currentLang.name} is not supported. Please try English.`;
+            break;
+          default:
+            errorMessage = `Speech recognition error: ${event.error}`;
+        }
+
+        setError(errorMessage);
         setIsRecording(false);
         setIsProcessing(false);
+
+        toast({
+          title: "Speech Recognition Error",
+          description: errorMessage,
+          variant: "destructive",
+        });
       };
+
+      // Handle sound start
+      recognitionRef.current.onsoundstart = () => {
+        console.log("Sound detected");
+      };
+
+      // Handle speech start
+      recognitionRef.current.onspeechstart = () => {
+        console.log("Speech detected");
+        setIsProcessing(false);
+      };
+    } catch (error) {
+      console.error("Failed to setup speech recognition:", error);
+      setError(
+        "Failed to initialize speech recognition. Please refresh the page and try again.",
+      );
     }
   };
 
