@@ -62,8 +62,21 @@ const CEIRService: React.FC = () => {
 
     if (!formData.mobileNumber || formData.mobileNumber === "+91") {
       newErrors.mobileNumber = "Mobile number is required";
-    } else if (!/^\+91[6-9]\d{9}$/.test(formData.mobileNumber)) {
-      newErrors.mobileNumber = "Please enter a valid Indian mobile number";
+    } else {
+      const cleanNumber = formData.mobileNumber.replace(/[\s\-\(\)]/g, "");
+      const phonePatterns = [
+        /^\+91[6789]\d{9}$/, // +91XXXXXXXXXX
+        /^91[6789]\d{9}$/, // 91XXXXXXXXXX
+        /^0[6789]\d{9}$/, // 0XXXXXXXXXX
+        /^[6789]\d{9}$/, // XXXXXXXXXX
+      ];
+      const isValid = phonePatterns.some((pattern) =>
+        pattern.test(cleanNumber),
+      );
+      if (!isValid) {
+        newErrors.mobileNumber =
+          "Please enter a valid Indian mobile number (10 digits starting with 6, 7, 8, or 9)";
+      }
     }
 
     if (!formData.imeiNumber) {

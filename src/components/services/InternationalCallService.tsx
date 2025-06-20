@@ -53,12 +53,21 @@ const InternationalCallService: React.FC = () => {
 
     if (!formData.displayNumber.trim()) {
       newErrors.displayNumber = "Displayed Indian number is required";
-    } else if (
-      !/^(\+91|91)?[6-9]\d{9}$/.test(
-        formData.displayNumber.replace(/[\s-]/g, ""),
-      )
-    ) {
-      newErrors.displayNumber = "Please enter a valid Indian mobile number";
+    } else {
+      const cleanNumber = formData.displayNumber.replace(/[\s\-\(\)]/g, "");
+      const phonePatterns = [
+        /^\+91[6789]\d{9}$/, // +91XXXXXXXXXX
+        /^91[6789]\d{9}$/, // 91XXXXXXXXXX
+        /^0[6789]\d{9}$/, // 0XXXXXXXXXX
+        /^[6789]\d{9}$/, // XXXXXXXXXX
+      ];
+      const isValid = phonePatterns.some((pattern) =>
+        pattern.test(cleanNumber),
+      );
+      if (!isValid) {
+        newErrors.displayNumber =
+          "Please enter a valid Indian mobile number (10 digits starting with 6, 7, 8, or 9)";
+      }
     }
 
     if (!formData.callDate) {
@@ -81,8 +90,21 @@ const InternationalCallService: React.FC = () => {
 
     if (!formData.yourNumber || formData.yourNumber === "+91") {
       newErrors.yourNumber = "Your mobile number is required";
-    } else if (!/^\+91[6-9]\d{9}$/.test(formData.yourNumber)) {
-      newErrors.yourNumber = "Please enter a valid Indian mobile number";
+    } else {
+      const cleanNumber = formData.yourNumber.replace(/[\s\-\(\)]/g, "");
+      const phonePatterns = [
+        /^\+91[6789]\d{9}$/, // +91XXXXXXXXXX
+        /^91[6789]\d{9}$/, // 91XXXXXXXXXX
+        /^0[6789]\d{9}$/, // 0XXXXXXXXXX
+        /^[6789]\d{9}$/, // XXXXXXXXXX
+      ];
+      const isValid = phonePatterns.some((pattern) =>
+        pattern.test(cleanNumber),
+      );
+      if (!isValid) {
+        newErrors.yourNumber =
+          "Please enter a valid Indian mobile number (10 digits starting with 6, 7, 8, or 9)";
+      }
     }
 
     setErrors(newErrors);
