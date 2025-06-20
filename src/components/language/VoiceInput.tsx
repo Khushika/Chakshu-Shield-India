@@ -45,7 +45,7 @@ const languageConfigs = {
     code: "hi-IN",
     name: "हिंदी",
     sampleText:
-      "मुझे कल एक धोखाधड़ी की कॉल आई थी जिसकी मैं रिपोर्ट करना चाहता हूं। किसी ने मेरे बैंक का नाम लेकर मेरा PIN मा��गा था।",
+      "मुझे कल एक धोखाधड़ी की कॉल आई थी जिसकी मैं रिपोर्ट करना चाहता हूं। किसी ने मेरे बैंक का नाम लेकर मेरा PIN मांगा था।",
     prompts: {
       start: "बोलना शुरू करने के लिए माइक्रोफोन पर क्लिक करें",
       listening: "सुन रहा हूं... स्पष्ट रूप से बोलें",
@@ -83,7 +83,7 @@ const languageConfigs = {
     sampleText:
       "நான் நேற்று ஒரு மோசடி அழைப்பு வந்ததை தெரிவிக்க விரும்புகிறேன். யாரோ என் வங்கியின் பெயரில் என் PIN கேட்டார்கள்।",
     prompts: {
-      start: "பேசத் தொடங்க மைக்ரோஃபோனைக் கிளிக் செய்யவும்",
+      start: "பேசத் தொடங்க மைக்ரோஃபோனைக் கி���ிக் செய்யவும்",
       listening: "கேட்கிறேன்... தெளிவாக பேசுங்கள்",
       processing: "உங்கள் பேச்சை புரிந்துகொள்கிறேன்...",
       ready: "குரல் உள்ளீட்டைத் தொடங்க கிளிக் செய்யவும்",
@@ -105,7 +105,7 @@ const languageConfigs = {
     code: "kn-IN",
     name: "ಕನ್ನಡ",
     sampleText:
-      "ನನಗೆ ನಿನ್ನೆ ��ಂದ ವಂಚನೆ ಕರೆಯ ಬಗ್ಗೆ ವರದಿ ಮಾಡಲು ಬಯಸುತ್ತೇನೆ. ಯಾರೋ ನನ್ನ ಬ್ಯಾಂಕಿನ ಹೆಸರಿನಲ್ಲಿ ನನ್ನ PIN ಕೇಳಿದ್ದರು।",
+      "ನನಗೆ ನಿನ್ನೆ ಬಂದ ವಂಚನೆ ಕರೆಯ ಬಗ್ಗೆ ವರದಿ ಮಾಡಲು ಬಯಸುತ್ತೇನೆ. ಯಾರೋ ನನ್ನ ಬ್ಯಾಂಕಿನ ಹೆಸರಿನಲ್ಲಿ ನನ್ನ PIN ಕೇಳಿದ್ದರು।",
     prompts: {
       start: "ಮಾತನಾಡಲು ಪ್ರಾರಂಭಿಸಲು ಮೈಕ್ರೋಫೋನ್ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ",
       listening: "ಆಲಿಸುತ್ತಿದ್ದೇನೆ... ಸ್ಪಷ್ಟವಾಗಿ ಮಾತನಾಡಿ",
@@ -141,7 +141,7 @@ const languageConfigs = {
     code: "pa-IN",
     name: "ਪੰਜਾਬੀ",
     sampleText:
-      "ਮੈਂ ਕੱਲ੍ਹ ਆ��� ਇੱਕ ਧੋਖਾਧੜੀ ਕਾਲ ਬਾਰੇ ਰਿਪੋਰਟ ਕਰਨਾ ਚਾਹੁੰਦਾ ਹਾਂ। ਕਿਸੇ ਨੇ ਮੇਰੇ ਬੈਂਕ ਦੇ ਨਾਮ ਤੇ ਮੇਰਾ PIN ਮੰਗਿਆ ਸੀ।",
+      "ਮੈਂ ਕੱਲ੍ਹ ਆਈ ਇੱਕ ਧੋਖਾਧੜੀ ਕਾਲ ਬਾਰੇ ਰਿਪੋਰਟ ਕਰਨਾ ਚਾਹੁੰਦਾ ਹਾਂ। ਕਿਸੇ ਨੇ ਮੇਰੇ ਬੈਂਕ ਦੇ ਨਾਮ ਤੇ ਮੇਰਾ PIN ਮੰਗਿਆ ਸੀ।",
     prompts: {
       start: "ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮਾਈਕ੍ਰੋਫੋਨ ਤੇ ਕਲਿੱਕ ਕਰੋ",
       listening: "ਸੁਣ ਰਿਹਾ ਹਾਂ... ਸਾਫ਼ ਬੋਲੋ",
@@ -525,31 +525,64 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
     setIsProcessing(true);
     setAudioLevel(0);
 
+    // Stop speech recognition
     if (recognitionRef.current) {
-      recognitionRef.current.stop();
+      try {
+        recognitionRef.current.stop();
+      } catch (error) {
+        console.warn("Error stopping speech recognition:", error);
+      }
     }
 
+    // Stop media recorder
     if (
       mediaRecorderRef.current &&
       mediaRecorderRef.current.state !== "inactive"
     ) {
-      mediaRecorderRef.current.stop();
+      try {
+        mediaRecorderRef.current.stop();
+      } catch (error) {
+        console.warn("Error stopping media recorder:", error);
+      }
     }
 
+    // Close audio context
     if (audioContextRef.current) {
-      audioContextRef.current.close();
+      try {
+        audioContextRef.current.close();
+      } catch (error) {
+        console.warn("Error closing audio context:", error);
+      }
     }
 
+    // Process results
     setTimeout(() => {
       setIsProcessing(false);
-      if (transcription) {
-        onTranscriptionComplete?.(transcription);
+
+      // Clean up the transcription
+      const cleanTranscription = transcription.replace(/\[.*?\]/g, "").trim();
+      setTranscription(cleanTranscription);
+
+      if (cleanTranscription) {
+        onTranscriptionComplete?.(cleanTranscription);
+
+        const wordCount = cleanTranscription
+          .split(" ")
+          .filter((word) => word.length > 0).length;
+        const charCount = cleanTranscription.length;
+
         toast({
-          title: "Transcription Complete",
-          description: `Captured ${transcription.length} characters with ${confidence}% confidence`,
+          title: "Recording Complete",
+          description: `Captured ${charCount} characters, ${wordCount} words${confidence > 0 ? ` with ${confidence}% confidence` : ""}`,
+        });
+      } else {
+        toast({
+          title: "No Speech Detected",
+          description: "Please try speaking again or check your microphone.",
+          variant: "destructive",
         });
       }
-    }, 1500);
+    }, 1000);
   };
 
   const playAudio = () => {
