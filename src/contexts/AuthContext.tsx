@@ -74,6 +74,33 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const signUp = async (email: string, password: string, fullName: string) => {
     try {
       setLoading(true);
+
+      // Check if we can reach Supabase first
+      const connectionTest = await fetch(`${supabase.supabaseUrl}/rest/v1/`, {
+        method: "HEAD",
+        headers: {
+          apikey: supabase.supabaseKey,
+        },
+      }).catch(() => null);
+
+      if (!connectionTest) {
+        const networkError: AuthError = {
+          name: "NetworkError",
+          message:
+            "Unable to connect to authentication service. Please check your internet connection and try again.",
+          status: 0,
+        };
+
+        toast({
+          title: "Connection Error",
+          description:
+            "Unable to connect to authentication service. Please check your internet connection and try again.",
+          variant: "destructive",
+        });
+
+        return { error: networkError };
+      }
+
       const { error } = await supabase.auth.signUp({
         email,
         password,
@@ -101,6 +128,26 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       return { error: null };
     } catch (error) {
       const authError = error as AuthError;
+
+      // Handle network/fetch errors specifically
+      if (error instanceof TypeError && error.message.includes("fetch")) {
+        const networkError: AuthError = {
+          name: "NetworkError",
+          message:
+            "Network connection failed. Please check your internet connection and try again.",
+          status: 0,
+        };
+
+        toast({
+          title: "Network Error",
+          description:
+            "Failed to connect to authentication service. Please check your internet connection and try again.",
+          variant: "destructive",
+        });
+
+        return { error: networkError };
+      }
+
       return { error: authError };
     } finally {
       setLoading(false);
@@ -110,6 +157,33 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const signIn = async (email: string, password: string) => {
     try {
       setLoading(true);
+
+      // Check connectivity first
+      const connectionTest = await fetch(`${supabase.supabaseUrl}/rest/v1/`, {
+        method: "HEAD",
+        headers: {
+          apikey: supabase.supabaseKey,
+        },
+      }).catch(() => null);
+
+      if (!connectionTest) {
+        const networkError: AuthError = {
+          name: "NetworkError",
+          message:
+            "Unable to connect to authentication service. Please check your internet connection and try again.",
+          status: 0,
+        };
+
+        toast({
+          title: "Connection Error",
+          description:
+            "Unable to connect to authentication service. Please check your internet connection and try again.",
+          variant: "destructive",
+        });
+
+        return { error: networkError };
+      }
+
       const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -127,6 +201,26 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       return { error: null };
     } catch (error) {
       const authError = error as AuthError;
+
+      // Handle network/fetch errors specifically
+      if (error instanceof TypeError && error.message.includes("fetch")) {
+        const networkError: AuthError = {
+          name: "NetworkError",
+          message:
+            "Network connection failed. Please check your internet connection and try again.",
+          status: 0,
+        };
+
+        toast({
+          title: "Network Error",
+          description:
+            "Failed to connect to authentication service. Please check your internet connection and try again.",
+          variant: "destructive",
+        });
+
+        return { error: networkError };
+      }
+
       return { error: authError };
     } finally {
       setLoading(false);
@@ -153,6 +247,32 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const resetPassword = async (email: string) => {
     try {
+      // Check connectivity first
+      const connectionTest = await fetch(`${supabase.supabaseUrl}/rest/v1/`, {
+        method: "HEAD",
+        headers: {
+          apikey: supabase.supabaseKey,
+        },
+      }).catch(() => null);
+
+      if (!connectionTest) {
+        const networkError: AuthError = {
+          name: "NetworkError",
+          message:
+            "Unable to connect to authentication service. Please check your internet connection and try again.",
+          status: 0,
+        };
+
+        toast({
+          title: "Connection Error",
+          description:
+            "Unable to connect to authentication service. Please check your internet connection and try again.",
+          variant: "destructive",
+        });
+
+        return { error: networkError };
+      }
+
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo: `${window.location.origin}/reset-password`,
       });
@@ -174,6 +294,26 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       return { error: null };
     } catch (error) {
       const authError = error as AuthError;
+
+      // Handle network/fetch errors specifically
+      if (error instanceof TypeError && error.message.includes("fetch")) {
+        const networkError: AuthError = {
+          name: "NetworkError",
+          message:
+            "Network connection failed. Please check your internet connection and try again.",
+          status: 0,
+        };
+
+        toast({
+          title: "Network Error",
+          description:
+            "Failed to connect to authentication service. Please check your internet connection and try again.",
+          variant: "destructive",
+        });
+
+        return { error: networkError };
+      }
+
       return { error: authError };
     }
   };
