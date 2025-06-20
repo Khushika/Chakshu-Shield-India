@@ -13,7 +13,6 @@ import AutoCategorization from "@/components/ai/AutoCategorization";
 import NetworkMapping from "@/components/ai/NetworkMapping";
 import RiskCalculator from "@/components/ai/RiskCalculator";
 import PreventionTips from "@/components/ai/PreventionTips";
-import EnhancedLanguageFeatures from "@/components/language/EnhancedLanguageFeatures";
 import { LanguageProvider } from "@/components/language/LanguageProvider";
 
 const AIFeatures = () => {
@@ -28,7 +27,6 @@ const AIFeatures = () => {
           {/* Navigation Buttons */}
           <NavigationButtons />
 
-          <EnhancedLanguageFeatures />
           <RealTimeAnalysis />
           <ThreatAssessment />
           <DuplicateDetection />
