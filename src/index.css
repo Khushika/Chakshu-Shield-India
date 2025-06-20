@@ -351,6 +351,14 @@
     background-color: hsl(var(--india-navy));
   }
 
+  /* Dark theme text utilities */
+  .dark\:text-white {
+    color: #ffffff;
+  }
+  .dark\:text-light-yellow {
+    color: #ffff00;
+  }
+
   /* Focus utilities for accessibility */
   .focus-visible-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-india-saffron focus-visible:ring-offset-2;
