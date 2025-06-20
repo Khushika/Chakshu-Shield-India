@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-interface Report {
+export interface Report {
   id: string;
   date: string;
   type: string;
