@@ -275,7 +275,28 @@ const Dashboard = () => {
         </div>
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <Card
+            className="cursor-pointer hover:shadow-md transition-shadow"
+            onClick={() => navigate("/voice-reporting")}
+          >
+            <CardContent className="pt-6">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-green-100 rounded-lg">
+                  <Mic className="h-6 w-6 text-green-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    Voice Report
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-white">
+                    Record fraud report using voice
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           <Card className="cursor-pointer hover:shadow-md transition-shadow">
             <CardContent className="pt-6">
               <div className="flex items-center gap-3">
@@ -283,8 +304,10 @@ const Dashboard = () => {
                   <BarChart className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">View Analytics</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    View Analytics
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-white">
                     Detailed insights on fraud trends
                   </p>
                 </div>
