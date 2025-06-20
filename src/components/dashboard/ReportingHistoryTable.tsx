@@ -58,6 +58,16 @@ const ReportingHistoryTable = ({ filters }: ReportingHistoryTableProps) => {
     },
   ];
 
+  const handleViewDetails = (report: any) => {
+    setSelectedReport(report);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedReport(null);
+  };
+
   const getStatusBadge = (status: string) => {
     let variant: "default" | "destructive" | "outline" | "secondary" =
       "outline";
