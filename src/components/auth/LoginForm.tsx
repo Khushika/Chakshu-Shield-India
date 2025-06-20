@@ -20,7 +20,7 @@ interface LoginFormProps {
 }
 
 const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToSignup, onClose }) => {
-  const { signIn, loading } = useAuth();
+  const { signIn, loading, resetPassword } = useAuth();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -84,7 +84,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToSignup, onClose }) => {
       return;
     }
 
-    const { resetPassword } = useAuth();
     await resetPassword(formData.email);
   };
 
