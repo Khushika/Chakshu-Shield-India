@@ -37,7 +37,7 @@ const QuickStatsCards = () => {
         <Card key={index} className="hover:shadow-md transition-shadow">
           <CardContent className="p-6">
             <div className="flex flex-col space-y-2">
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
+              <p className="text-sm font-medium text-gray-600 dark:text-light-yellow">
                 {stat.title}
               </p>
               <p className="text-3xl font-bold text-gray-900 dark:text-white">

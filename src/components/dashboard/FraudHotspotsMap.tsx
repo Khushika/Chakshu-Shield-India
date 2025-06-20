@@ -50,7 +50,7 @@ const FraudHotspotsMap = () => {
             <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity">
               <div className="bg-white dark:bg-gray-800 p-2 rounded-lg shadow-lg border text-xs whitespace-nowrap">
                 <p className="font-medium">{spot.area}</p>
-                <p className="text-gray-600 dark:text-gray-400">{spot.incidents} incidents</p>
+                <p className="text-gray-600 dark:text-light-yellow">{spot.incidents} incidents</p>
                 <Badge variant="outline" className="text-xs">
                   {spot.risk} Risk
                 </Badge>
@@ -85,7 +85,7 @@ const FraudHotspotsMap = () => {
               <span className="font-medium">{spot.area}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-600 dark:text-gray-400">{spot.incidents} incidents</span>
+              <span className="text-sm text-gray-600 dark:text-light-yellow">{spot.incidents} incidents</span>
               <Badge variant="outline" className={`text-xs ${
                 spot.risk === 'High' ? 'border-red-500 text-red-600' :
                 spot.risk === 'Medium' ? 'border-yellow-500 text-yellow-600' :
