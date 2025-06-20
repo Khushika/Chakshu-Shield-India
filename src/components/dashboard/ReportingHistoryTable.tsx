@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import ReportDetailsModal from "./ReportDetailsModal";
 
 interface ReportingHistoryTableProps {
   filters: {
@@ -27,15 +27,15 @@ const ReportingHistoryTable = ({ filters }: ReportingHistoryTableProps) => {
       type: "Phishing",
       description: "Fake bank email requesting credentials",
       status: "Resolved",
-      impact: "High"
+      impact: "High",
     },
     {
-      id: "RPT-002", 
+      id: "RPT-002",
       date: "2024-05-25",
       type: "SMS Fraud",
       description: "Lottery scam text message",
       status: "Under Review",
-      impact: "Medium"
+      impact: "Medium",
     },
     {
       id: "RPT-003",
@@ -43,7 +43,7 @@ const ReportingHistoryTable = ({ filters }: ReportingHistoryTableProps) => {
       type: "Call Fraud",
       description: "Fake tech support call",
       status: "Resolved",
-      impact: "High"
+      impact: "High",
     },
     {
       id: "RPT-004",
@@ -51,13 +51,14 @@ const ReportingHistoryTable = ({ filters }: ReportingHistoryTableProps) => {
       type: "Email Spam",
       description: "Investment scam email",
       status: "Pending",
-      impact: "Low"
-    }
+      impact: "Low",
+    },
   ];
 
   const getStatusBadge = (status: string) => {
-    let variant: "default" | "destructive" | "outline" | "secondary" = "outline";
-    
+    let variant: "default" | "destructive" | "outline" | "secondary" =
+      "outline";
+
     if (status === "Resolved") {
       variant = "default";
     } else if (status === "Under Review") {
@@ -65,24 +66,19 @@ const ReportingHistoryTable = ({ filters }: ReportingHistoryTableProps) => {
     } else if (status === "Pending") {
       variant = "outline";
     }
-    
-    return (
-      <Badge variant={variant}>
-        {status}
-      </Badge>
-    );
+
+    return <Badge variant={variant}>{status}</Badge>;
   };
 
   const getImpactBadge = (impact: string) => {
     const colors = {
-      "High": "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
-      "Medium": "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
-      "Low": "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+      High: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
+      Medium:
+        "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
+      Low: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
     };
     return (
-      <Badge className={colors[impact as keyof typeof colors]}>
-        {impact}
-      </Badge>
+      <Badge className={colors[impact as keyof typeof colors]}>{impact}</Badge>
     );
   };
 
@@ -106,7 +102,9 @@ const ReportingHistoryTable = ({ filters }: ReportingHistoryTableProps) => {
               <TableCell className="font-medium">{report.id}</TableCell>
               <TableCell>{report.date}</TableCell>
               <TableCell>{report.type}</TableCell>
-              <TableCell className="max-w-xs truncate">{report.description}</TableCell>
+              <TableCell className="max-w-xs truncate">
+                {report.description}
+              </TableCell>
               <TableCell>{getStatusBadge(report.status)}</TableCell>
               <TableCell>{getImpactBadge(report.impact)}</TableCell>
               <TableCell>
