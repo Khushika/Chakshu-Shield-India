@@ -47,6 +47,9 @@ const VoiceReporting = () => {
     { code: "gu", name: "Gujarati", native: "ગુજરાતી" },
     { code: "kn", name: "Kannada", native: "ಕನ್ನಡ" },
     { code: "ml", name: "Malayalam", native: "മലയാളം" },
+    { code: "mr", name: "Marathi", native: "मराठी" },
+    { code: "pa", name: "Punjabi", native: "ਪੰਜਾਬੀ" },
+    { code: "ur", name: "Urdu", native: "اردو" },
   ];
 
   const fraudCategories = [
