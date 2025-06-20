@@ -12,7 +12,6 @@ import BusinessFraudGuide from "@/components/education/BusinessFraudGuide";
 import LatestFraudAlerts from "@/components/education/LatestFraudAlerts";
 import GovernmentAdvisories from "@/components/education/GovernmentAdvisories";
 import FAQSection from "@/components/education/FAQSection";
-import EnhancedLanguageFeatures from "@/components/language/EnhancedLanguageFeatures";
 import { LanguageProvider } from "@/components/language/LanguageProvider";
 
 const Education = () => {
