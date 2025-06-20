@@ -45,7 +45,7 @@ const languageConfigs = {
     code: "hi-IN",
     name: "हिंदी",
     sampleText:
-      "मुझे कल एक धोखाधड़ी की कॉल आई थी जिसकी मैं रिपोर्ट करना चाहता हूं। किसी ने मेरे बैंक का नाम लेकर मेरा PIN मांगा था।",
+      "मुझे कल एक धोखाधड़ी की कॉल आई थी जिसकी मैं रिपोर्ट करना चाहता हूं। किसी ने मेरे बैंक का नाम लेकर मेरा PIN मा��गा था।",
     prompts: {
       start: "बोलना शुरू करने के लिए माइक्रोफोन पर क्लिक करें",
       listening: "सुन रहा हूं... स्पष्ट रूप से बोलें",
@@ -72,7 +72,7 @@ const languageConfigs = {
       "నేను నిన్న ఒక మోసపూరిత కాల్ వచ్చిందని రిపోర్ట్ చేయాలని అనుకుంటున్నాను। ఎవరో నా బ్యాంక్ పేరు చెప్పి నా PIN అడిగారు।",
     prompts: {
       start: "మాట్లాడటం ప్రారంభించడానికి మైక్రోఫోన్‌పై క్లిక్ చేయండి",
-      listening: "వింటున్��ాను... స్పష్టంగా మాట్లాడండి",
+      listening: "వింటున్నాను... స్పష్టంగా మాట్లాడండి",
       processing: "మీ మాటలను అర్థం చేసుకుంటున్నాను...",
       ready: "వాయిస్ ఇన్‌పుట్ ప్రారంభించడానికి క్లిక్ చేయండి",
     },
@@ -105,7 +105,7 @@ const languageConfigs = {
     code: "kn-IN",
     name: "ಕನ್ನಡ",
     sampleText:
-      "ನನಗೆ ನಿನ್ನೆ ಬಂದ ವಂಚನೆ ಕರೆಯ ಬಗ್ಗೆ ವರದಿ ಮಾಡಲು ಬಯಸುತ್ತೇನೆ. ಯಾರೋ ನನ್ನ ಬ್ಯಾಂಕಿನ ಹೆಸರಿನಲ್ಲಿ ನನ್ನ PIN ಕೇಳಿದ್ದರು।",
+      "ನನಗೆ ನಿನ್ನೆ ��ಂದ ವಂಚನೆ ಕರೆಯ ಬಗ್ಗೆ ವರದಿ ಮಾಡಲು ಬಯಸುತ್ತೇನೆ. ಯಾರೋ ನನ್ನ ಬ್ಯಾಂಕಿನ ಹೆಸರಿನಲ್ಲಿ ನನ್ನ PIN ಕೇಳಿದ್ದರು।",
     prompts: {
       start: "ಮಾತನಾಡಲು ಪ್ರಾರಂಭಿಸಲು ಮೈಕ್ರೋಫೋನ್ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ",
       listening: "ಆಲಿಸುತ್ತಿದ್ದೇನೆ... ಸ್ಪಷ್ಟವಾಗಿ ಮಾತನಾಡಿ",
@@ -141,7 +141,7 @@ const languageConfigs = {
     code: "pa-IN",
     name: "ਪੰਜਾਬੀ",
     sampleText:
-      "ਮੈਂ ਕੱਲ੍ਹ ਆਈ ਇੱਕ ਧੋਖਾਧੜੀ ਕਾਲ ਬਾਰੇ ਰਿਪੋਰਟ ਕਰਨਾ ਚਾਹੁੰਦਾ ਹਾਂ। ਕਿਸੇ ਨੇ ਮੇਰੇ ਬੈਂਕ ਦੇ ਨਾਮ ਤੇ ਮੇਰਾ PIN ਮੰਗਿਆ ਸੀ।",
+      "ਮੈਂ ਕੱਲ੍ਹ ਆ��� ਇੱਕ ਧੋਖਾਧੜੀ ਕਾਲ ਬਾਰੇ ਰਿਪੋਰਟ ਕਰਨਾ ਚਾਹੁੰਦਾ ਹਾਂ। ਕਿਸੇ ਨੇ ਮੇਰੇ ਬੈਂਕ ਦੇ ਨਾਮ ਤੇ ਮੇਰਾ PIN ਮੰਗਿਆ ਸੀ।",
     prompts: {
       start: "ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮਾਈਕ੍ਰੋਫੋਨ ਤੇ ਕਲਿੱਕ ਕਰੋ",
       listening: "ਸੁਣ ਰਿਹਾ ਹਾਂ... ਸਾਫ਼ ਬੋਲੋ",
@@ -155,7 +155,7 @@ const languageConfigs = {
     sampleText:
       "میں کل آئی ایک دھوکہ دہی کی کال کی رپورٹ کرنا چاہتا ہوں۔ کسی نے میرے بینک کے نام سے میرا PIN مانگا تھا۔",
     prompts: {
-      start: "بولنا ش��وع کرنے کے لیے مائیکروفون پر کلک کریں",
+      start: "بولنا شروع کرنے کے لیے مائیکروفون پر کلک کریں",
       listening: "سن رہا ہوں... واضح بولیں",
       processing: "آپ کی آواز سمجھ رہا ہوں...",
       ready: "وائس ان پٹ شروع کرنے کے لیے کلک کریں",
@@ -380,16 +380,107 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
   };
 
   const startRecording = async () => {
+    // Check permissions first
     if (!hasPermission) {
       await checkMicrophonePermission();
-      return;
+      if (!hasPermission) return;
     }
 
     try {
+      // Reset state
       setError("");
-      setTranscription("");
       setConfidence(0);
+      setIsProcessing(true);
+
+      // Clear previous transcription only if starting fresh
+      if (!transcription.includes("[")) {
+        setTranscription("");
+      }
+
+      // Check if speech recognition is available
+      if (!recognitionRef.current) {
+        setupSpeechRecognition();
+        if (!recognitionRef.current) {
+          throw new Error("Speech recognition not available");
+        }
+      }
+
+      // Get microphone access
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true,
+          sampleRate: 44100,
+        },
+      });
+
       setIsRecording(true);
+
+      // Setup audio context for monitoring
+      try {
+        const audioContext = new (window.AudioContext ||
+          (window as any).webkitAudioContext)();
+        const analyser = audioContext.createAnalyser();
+        const microphone = audioContext.createMediaStreamSource(stream);
+
+        analyser.fftSize = 256;
+        analyser.smoothingTimeConstant = 0.8;
+        microphone.connect(analyser);
+
+        audioContextRef.current = audioContext;
+        analyserRef.current = analyser;
+
+        // Monitor audio levels
+        const monitorAudioLevel = () => {
+          if (analyserRef.current && isRecording) {
+            const dataArray = new Uint8Array(
+              analyserRef.current.frequencyBinCount,
+            );
+            analyserRef.current.getByteFrequencyData(dataArray);
+            const average =
+              dataArray.reduce((a, b) => a + b) / dataArray.length;
+            setAudioLevel(Math.min(average * 2, 100)); // Amplify sensitivity
+            requestAnimationFrame(monitorAudioLevel);
+          }
+        };
+        monitorAudioLevel();
+      } catch (audioError) {
+        console.warn("Audio monitoring setup failed:", audioError);
+        // Continue without audio monitoring
+      }
+
+      // Setup MediaRecorder for audio saving
+      try {
+        const mediaRecorder = new MediaRecorder(stream, {
+          mimeType: MediaRecorder.isTypeSupported("audio/webm")
+            ? "audio/webm"
+            : "audio/mp4",
+        });
+        const audioChunks: Blob[] = [];
+
+        mediaRecorder.ondataavailable = (event) => {
+          if (event.data.size > 0) {
+            audioChunks.push(event.data);
+          }
+        };
+
+        mediaRecorder.onstop = () => {
+          if (audioChunks.length > 0) {
+            const audioBlob = new Blob(audioChunks, { type: "audio/wav" });
+            const url = URL.createObjectURL(audioBlob);
+            setAudioUrl(url);
+          }
+          // Stop all tracks
+          stream.getTracks().forEach((track) => track.stop());
+        };
+
+        mediaRecorder.start(100); // Record in 100ms intervals
+        mediaRecorderRef.current = mediaRecorder;
+      } catch (recorderError) {
+        console.warn("MediaRecorder setup failed:", recorderError);
+        // Continue without recording capability
+      }
 
       // Start speech recognition
       if (recognitionRef.current) {
@@ -397,60 +488,35 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
         recognitionRef.current.start();
       }
 
-      // Start audio recording for playback
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-
-      // Setup audio level monitoring
-      const audioContext = new AudioContext();
-      const analyser = audioContext.createAnalyser();
-      const microphone = audioContext.createMediaStreamSource(stream);
-
-      microphone.connect(analyser);
-      analyser.fftSize = 256;
-
-      audioContextRef.current = audioContext;
-      analyserRef.current = analyser;
-
-      // Monitor audio levels
-      const monitorAudioLevel = () => {
-        if (analyserRef.current && isRecording) {
-          const dataArray = new Uint8Array(
-            analyserRef.current.frequencyBinCount,
-          );
-          analyserRef.current.getByteFrequencyData(dataArray);
-          const average = dataArray.reduce((a, b) => a + b) / dataArray.length;
-          setAudioLevel(average);
-          requestAnimationFrame(monitorAudioLevel);
-        }
-      };
-      monitorAudioLevel();
-
-      // Setup MediaRecorder for audio saving
-      const mediaRecorder = new MediaRecorder(stream);
-      const audioChunks: Blob[] = [];
-
-      mediaRecorder.ondataavailable = (event) => {
-        audioChunks.push(event.data);
-      };
-
-      mediaRecorder.onstop = () => {
-        const audioBlob = new Blob(audioChunks, { type: "audio/wav" });
-        const url = URL.createObjectURL(audioBlob);
-        setAudioUrl(url);
-      };
-
-      mediaRecorder.start();
-      mediaRecorderRef.current = mediaRecorder;
-
       toast({
         title: "Recording Started",
         description: currentLang.prompts.listening,
       });
-    } catch (error) {
-      setError(
-        "Failed to start recording. Please check microphone permissions.",
-      );
+    } catch (error: any) {
+      console.error("Start recording error:", error);
+      let errorMessage = "Failed to start recording.";
+
+      if (error.name === "NotAllowedError") {
+        errorMessage =
+          "Microphone access denied. Please allow microphone permissions and try again.";
+      } else if (error.name === "NotFoundError") {
+        errorMessage =
+          "No microphone found. Please connect a microphone and try again.";
+      } else if (error.name === "NotSupportedError") {
+        errorMessage = "Audio recording is not supported in this browser.";
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+
+      setError(errorMessage);
       setIsRecording(false);
+      setIsProcessing(false);
+
+      toast({
+        title: "Recording Failed",
+        description: errorMessage,
+        variant: "destructive",
+      });
     }
   };
 
