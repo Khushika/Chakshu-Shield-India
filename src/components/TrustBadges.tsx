@@ -51,7 +51,7 @@ const TrustBadges = () => {
 
         {/* Government Logos */}
         <div className="text-center mt-12 pt-8 border-t border-white/20 dark:border-white/10">
-          <p className="text-gray-400 dark:text-gray-500 text-sm mb-4">
+          <p className="text-gray-400 dark:text-light-yellow text-sm mb-4">
             In partnership with
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">

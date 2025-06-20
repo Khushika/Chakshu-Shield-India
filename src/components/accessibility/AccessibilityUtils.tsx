@@ -567,7 +567,7 @@ const AccessibilityUtils: React.FC = () => {
           aria-haspopup="menu"
         >
           <Accessibility
-            className="h-4 w-4 text-gray-600 dark:text-gray-400"
+            className="h-4 w-4 text-gray-600 dark:text-light-yellow"
             aria-hidden="true"
           />
         </Button>
@@ -580,7 +580,7 @@ const AccessibilityUtils: React.FC = () => {
         role="menu"
         aria-label="Accessibility options menu"
       >
-        <DropdownMenuLabel className="text-sm font-semibold text-gray-900 dark:text-gray-100 px-3 py-2">
+        <DropdownMenuLabel className="text-sm font-semibold text-gray-900 dark:text-white px-3 py-2">
           <Accessibility className="h-4 w-4 inline mr-2" aria-hidden="true" />
           {currentLanguage === "en"
             ? "Accessibility Options"
@@ -597,7 +597,7 @@ const AccessibilityUtils: React.FC = () => {
 
         {/* Font Size Controls */}
         <div className="px-2 py-1">
-          <div className="text-xs font-medium text-gray-500 dark:text-gray-400 px-2 py-1 uppercase tracking-wide">
+          <div className="text-xs font-medium text-gray-500 dark:text-light-yellow px-2 py-1 uppercase tracking-wide">
             {currentLanguage === "en"
               ? "Text Size"
               : currentLanguage === "hi"
@@ -682,7 +682,7 @@ const AccessibilityUtils: React.FC = () => {
                           ? "اعلیٰ تضاد"
                           : "High Contrast"}
                 </span>
-                <span className="text-xs text-gray-500 dark:text-gray-400">
+                <span className="text-xs text-gray-500 dark:text-light-yellow">
                   Alt+C
                 </span>
               </div>
@@ -728,7 +728,7 @@ const AccessibilityUtils: React.FC = () => {
                           ? "متن سے آواز"
                           : "Text-to-Speech"}
                 </span>
-                <span className="text-xs text-gray-500 dark:text-gray-400">
+                <span className="text-xs text-gray-500 dark:text-light-yellow">
                   Alt+S
                 </span>
               </div>
@@ -784,7 +784,7 @@ const AccessibilityUtils: React.FC = () => {
                             ? "ہوور اسپیچ"
                             : "Hover Speech"}
                   </span>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">
+                  <span className="text-xs text-gray-500 dark:text-light-yellow">
                     {currentLanguage === "en"
                       ? "Speak on cursor hover"
                       : currentLanguage === "hi"
@@ -818,7 +818,7 @@ const AccessibilityUtils: React.FC = () => {
         {speechEnabled && (
           <>
             <div className="px-2 py-1">
-              <div className="text-xs font-medium text-gray-500 dark:text-gray-400 px-2 py-1 uppercase tracking-wide">
+              <div className="text-xs font-medium text-gray-500 dark:text-light-yellow px-2 py-1 uppercase tracking-wide">
                 {currentLanguage === "en"
                   ? "Speech Settings"
                   : currentLanguage === "hi"
@@ -937,7 +937,7 @@ const AccessibilityUtils: React.FC = () => {
                         ? "اصل مواد پر جائیں"
                         : "Jump to Main Content"}
               </span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">
+              <span className="text-xs text-gray-500 dark:text-light-yellow">
                 Alt+M
               </span>
             </div>
@@ -947,7 +947,7 @@ const AccessibilityUtils: React.FC = () => {
         <DropdownMenuSeparator />
 
         {/* Keyboard Shortcuts Help */}
-        <div className="px-3 py-2 text-xs text-gray-500 dark:text-gray-400">
+        <div className="px-3 py-2 text-xs text-gray-500 dark:text-light-yellow">
           <div className="font-medium mb-2">
             {currentLanguage === "en"
               ? "Keyboard Shortcuts:"

@@ -70,7 +70,7 @@ const CommunityReportsFeed = () => {
                 <span className="text-xs text-gray-500">{report.time}</span>
               </div>
               
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
+              <p className="text-sm text-gray-700 dark:text-white mb-2">
                 {report.description}
               </p>
               
