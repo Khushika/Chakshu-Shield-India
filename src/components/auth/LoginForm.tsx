@@ -32,10 +32,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToSignup, onClose }) => {
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
 
-    if (!formData.email) {
+    if (!formData.email.trim()) {
       newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      newErrors.email = "Please enter a valid email address";
     }
 
     if (!formData.password) {
@@ -58,13 +58,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToSignup, onClose }) => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await signIn(formData.email, formData.password);
+      const { error } = await signIn(formData.email.trim(), formData.password);
 
       if (!error) {
         onClose();
       }
     } catch (error) {
       console.error("Login error:", error);
+      setErrors({
+        password: "An unexpected error occurred. Please try again.",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -79,12 +82,23 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToSignup, onClose }) => {
   };
 
   const handleForgotPassword = async () => {
-    if (!formData.email) {
-      setErrors({ email: "Enter email for password reset" });
+    if (!formData.email.trim()) {
+      setErrors({
+        email: "Please enter your email address for password reset",
+      });
       return;
     }
 
-    await resetPassword(formData.email);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      setErrors({ email: "Please enter a valid email address" });
+      return;
+    }
+
+    try {
+      await resetPassword(formData.email.trim());
+    } catch (error) {
+      console.error("Password reset error:", error);
+    }
   };
 
   return (

@@ -44,10 +44,10 @@ const SignupForm: React.FC<SignupFormProps> = ({
       newErrors.fullName = "Name must be at least 2 characters";
     }
 
-    if (!formData.email) {
+    if (!formData.email.trim()) {
       newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      newErrors.email = "Please enter a valid email address";
     }
 
     if (!formData.password) {
@@ -80,9 +80,9 @@ const SignupForm: React.FC<SignupFormProps> = ({
 
     try {
       const { error } = await signUp(
-        formData.email,
+        formData.email.trim(),
         formData.password,
-        formData.fullName,
+        formData.fullName.trim(),
       );
 
       if (!error) {
@@ -93,6 +93,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
       }
     } catch (error) {
       console.error("Signup error:", error);
+      setErrors({ email: "An unexpected error occurred. Please try again." });
     } finally {
       setIsSubmitting(false);
     }
