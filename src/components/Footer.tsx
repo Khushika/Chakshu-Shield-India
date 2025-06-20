@@ -11,12 +11,12 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">चक्षु</h3>
-                <p className="text-sm text-gray-400 dark:text-gray-500">
+                <p className="text-sm text-gray-400 dark:text-light-yellow">
                   Chakshu Portal
                 </p>
               </div>
             </div>
-            <p className="text-gray-400 dark:text-gray-500 text-sm">
+            <p className="text-gray-400 dark:text-light-yellow text-sm">
               Protecting India from fraud calls and SMS through collective
               action and government intervention.
             </p>
@@ -25,7 +25,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold mb-4 text-white">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-gray-400 dark:text-gray-500">
+            <ul className="space-y-2 text-sm text-gray-400 dark:text-light-yellow">
               <li>
                 <a
                   href="#"
@@ -64,7 +64,7 @@ const Footer = () => {
           {/* Support */}
           <div>
             <h4 className="font-semibold mb-4 text-white">Support</h4>
-            <ul className="space-y-2 text-sm text-gray-400 dark:text-gray-500">
+            <ul className="space-y-2 text-sm text-gray-400 dark:text-light-yellow">
               <li>
                 <a
                   href="#"
@@ -103,7 +103,7 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="font-semibold mb-4 text-white">Contact</h4>
-            <div className="space-y-2 text-sm text-gray-400 dark:text-gray-500">
+            <div className="space-y-2 text-sm text-gray-400 dark:text-light-yellow">
               <p>Helpline: 1930</p>
               <p>Email: support@chakshu.gov.in</p>
               <p>Available 24/7</p>
@@ -112,11 +112,11 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 dark:border-gray-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-sm text-gray-400 dark:text-gray-500">
+          <p className="text-sm text-gray-400 dark:text-light-yellow">
             © 2025 Government of India. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
-            <span className="text-sm text-gray-400 dark:text-gray-500">
+            <span className="text-sm text-gray-400 dark:text-light-yellow">
               Made with 🇮🇳 for India
             </span>
           </div>
