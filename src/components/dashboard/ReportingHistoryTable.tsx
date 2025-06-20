@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import ReportDetailsModal from "./ReportDetailsModal";
+import ReportDetailsModal, { Report } from "./ReportDetailsModal";
 
 interface ReportingHistoryTableProps {
   filters: {
