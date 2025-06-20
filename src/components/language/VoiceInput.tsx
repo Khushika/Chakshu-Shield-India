@@ -57,7 +57,7 @@ const languageConfigs = {
     code: "bn-IN",
     name: "বাংলা",
     sampleText:
-      "আমি গতকা��� একটি জালিয়াতি কল পেয়েছি যা রিপোর্ট করতে চাই। কেউ আমার ব্যাংকের নাম করে আমার PIN চেয়েছিল।",
+      "আমি গতকাল একটি জালিয়াতি কল পেয়েছি যা রিপোর্ট করতে চাই। কেউ আমার ব্যাংকের নাম করে আমার PIN চেয়েছিল।",
     prompts: {
       start: "কথা বলা শুরু করতে মাইক্রোফোনে ক্লিক করুন",
       listening: "শুনছি... স্পষ্ট করে বলুন",
@@ -72,7 +72,7 @@ const languageConfigs = {
       "నేను నిన్న ఒక మోసపూరిత కాల్ వచ్చిందని రిపోర్ట్ చేయాలని అనుకుంటున్నాను। ఎవరో నా బ్యాంక్ పేరు చెప్పి నా PIN అడిగారు।",
     prompts: {
       start: "మాట్లాడటం ప్రారంభించడానికి మైక్రోఫోన్‌పై క్లిక్ చేయండి",
-      listening: "వింటున్నాను... స్పష్టంగా మాట్లాడండ���",
+      listening: "వింటున్నాను... స్పష్టంగా మాట్లాడండి",
       processing: "మీ మాటలను అర్థం చేసుకుంటున్నాను...",
       ready: "వాయిస్ ఇన్‌పుట్ ప్రారంభించడానికి క్లిక్ చేయండి",
     },
@@ -83,7 +83,7 @@ const languageConfigs = {
     sampleText:
       "நான் நேற்று ஒரு மோசடி அழைப்பு வந்ததை தெரிவிக்க விரும்புகிறேன். யாரோ என் வங்கியின் பெயரில் என் PIN கேட்டார்கள்।",
     prompts: {
-      start: "பேசத் தொடங்க மைக்ரோஃபோனைக் கிளிக் செய்யவும்",
+      start: "பேசத் தொடங்க மைக்��ோஃபோனைக் கிளிக் செய்யவும்",
       listening: "கேட்கிறேன்... தெளிவாக பேசுங்கள்",
       processing: "உங்கள் பேச்சை புரிந்துகொள்கிறேன்...",
       ready: "குரல் உள்ளீட்டைத் தொடங்க கிளிக் செய்யவும்",
@@ -93,7 +93,7 @@ const languageConfigs = {
     code: "gu-IN",
     name: "ગુજરાતી",
     sampleText:
-      "હું ગઈકાલે આવેલા એક છેતરપિંડીના કોલની જા��� કરવા માંગુ છું. કોઈએ મારી બેંકનું નામ લઈને મારો PIN માગ્યો હતો।",
+      "હું ગઈકાલે આવેલા એક છેતરપિંડીના કોલની જાણ કરવા માંગુ છું. કોઈએ મારી બેંકનું નામ લઈને મારો PIN માગ્યો હતો।",
     prompts: {
       start: "બોલવાનું શરુ કરવા માટે માઇક્રોફોન પર ક્લિક કરો",
       listening: "સાંભળી રહ્યો છું... સ્પષ્ટ બોલો",
@@ -109,7 +109,7 @@ const languageConfigs = {
     prompts: {
       start: "ಮಾತನಾಡಲು ಪ್ರಾರಂಭಿಸಲು ಮೈಕ್ರೋಫೋನ್ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ",
       listening: "ಆಲಿಸುತ್ತಿದ್ದೇನೆ... ಸ್ಪಷ್ಟವಾಗಿ ಮಾತನಾಡಿ",
-      processing: "ನಿಮ್ಮ ಮಾತು ���ರ್ಥಮಾಡಿಕೊಳ್ಳುತ್ತಿದ್ದೇನೆ...",
+      processing: "ನಿಮ್ಮ ಮಾತು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುತ್ತಿದ್ದೇನೆ...",
       ready: "ವಾಯ್ಸ್ ಇನ್‌ಪುಟ್ ಪ್ರಾರಂಭಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ",
     },
   },
@@ -146,7 +146,7 @@ const languageConfigs = {
       start: "ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮਾਈਕ੍ਰੋਫੋਨ ਤੇ ਕਲਿੱਕ ਕਰੋ",
       listening: "ਸੁਣ ਰਿਹਾ ਹਾਂ... ਸਾਫ਼ ਬੋਲੋ",
       processing: "ਤੁਹਾਡੀ ਆਵਾਜ਼ ਸਮਝ ਰਿਹਾ ਹਾਂ...",
-      ready: "ਵ���ਇਸ ਇਨਪੁੱਟ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ",
+      ready: "ਵਾਇਸ ਇਨਪੁੱਟ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ",
     },
   },
   ur: {
@@ -525,16 +525,28 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
         audioContextRef.current = audioContext;
         analyserRef.current = analyser;
 
-        // Monitor audio levels
+        // Monitor audio levels with enhanced sensitivity
         const monitorAudioLevel = () => {
           if (analyserRef.current && isRecording) {
             const dataArray = new Uint8Array(
               analyserRef.current.frequencyBinCount,
             );
             analyserRef.current.getByteFrequencyData(dataArray);
-            const average =
-              dataArray.reduce((a, b) => a + b) / dataArray.length;
-            setAudioLevel(Math.min(average * 2, 100)); // Amplify sensitivity
+
+            // Calculate RMS (Root Mean Square) for better audio level detection
+            const rms = Math.sqrt(
+              dataArray.reduce((sum, value) => sum + value * value, 0) /
+                dataArray.length,
+            );
+            const normalizedLevel = Math.min((rms / 30) * 100, 100); // Better normalization
+
+            setAudioLevel(normalizedLevel);
+
+            // Detect if audio is too low
+            if (normalizedLevel > 10) {
+              setSpeechDetected(true);
+            }
+
             requestAnimationFrame(monitorAudioLevel);
           }
         };
