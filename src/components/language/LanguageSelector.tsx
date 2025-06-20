@@ -98,7 +98,7 @@ const LanguageSelector: React.FC = () => {
         role="menu"
         aria-label="Language selection menu"
       >
-        <DropdownMenuLabel className="text-sm font-semibold text-gray-900 dark:text-gray-100 px-3 py-2">
+        <DropdownMenuLabel className="text-sm font-semibold text-gray-900 dark:text-white px-3 py-2">
           <Globe className="h-4 w-4 inline mr-2" aria-hidden="true" />
           {currentLanguage === "en"
             ? "Select Language"

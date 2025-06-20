@@ -205,7 +205,7 @@ const Header = () => {
                       aria-label="Mobile navigation"
                     >
                       <h3
-                        className={`text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide ${isRTL ? "text-right" : ""}`}
+                        className={`text-sm font-semibold text-gray-500 dark:text-light-yellow mb-3 uppercase tracking-wide ${isRTL ? "text-right" : ""}`}
                       >
                         Navigation
                       </h3>
@@ -227,7 +227,7 @@ const Header = () => {
                         <Separator />
                         <div className="space-y-3">
                           <h3
-                            className={`text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide ${isRTL ? "text-right" : ""}`}
+                            className={`text-sm font-semibold text-gray-500 dark:text-light-yellow uppercase tracking-wide ${isRTL ? "text-right" : ""}`}
                           >
                             Account
                           </h3>
@@ -264,7 +264,7 @@ const Header = () => {
                         <Separator />
                         <div className="space-y-3">
                           <h3
-                            className={`text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide ${isRTL ? "text-right" : ""}`}
+                            className={`text-sm font-semibold text-gray-500 dark:text-light-yellow uppercase tracking-wide ${isRTL ? "text-right" : ""}`}
                           >
                             Account
                           </h3>
@@ -292,7 +292,7 @@ const Header = () => {
                             <Link
                               to="/dashboard"
                               onClick={closeMobileMenu}
-                              className={`flex items-center py-2 px-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus-visible-ring ${isRTL ? "flex-row-reverse" : ""}`}
+                              className={`flex items-center py-2 px-3 rounded-lg text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus-visible-ring ${isRTL ? "flex-row-reverse" : ""}`}
                             >
                               <User
                                 className={`h-4 w-4 ${isRTL ? "ml-3" : "mr-3"}`}
@@ -303,7 +303,7 @@ const Header = () => {
                             <Link
                               to="/reports-management"
                               onClick={closeMobileMenu}
-                              className={`flex items-center py-2 px-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus-visible-ring ${isRTL ? "flex-row-reverse" : ""}`}
+                              className={`flex items-center py-2 px-3 rounded-lg text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus-visible-ring ${isRTL ? "flex-row-reverse" : ""}`}
                             >
                               <User
                                 className={`h-4 w-4 ${isRTL ? "ml-3" : "mr-3"}`}
