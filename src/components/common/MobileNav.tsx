@@ -86,7 +86,7 @@ const MobileNav = () => {
         {/* Mobile Navigation Header */}
         <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
           <h3
-            className={`text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide ${isRTL ? "text-right" : ""}`}
+            className={`text-sm font-semibold text-gray-500 dark:text-light-yellow uppercase tracking-wide ${isRTL ? "text-right" : ""}`}
           >
             Quick Navigation
           </h3>
@@ -107,13 +107,13 @@ const MobileNav = () => {
                     className={`flex flex-col items-center space-y-2 ${isRTL ? "text-right" : "text-center"}`}
                   >
                     <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 group-hover:bg-india-saffron/20 dark:group-hover:bg-india-saffron/30 rounded-lg flex items-center justify-center transition-colors">
-                      <IconComponent className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-india-saffron transition-colors" />
+                      <IconComponent className="w-5 h-5 text-gray-600 dark:text-light-yellow group-hover:text-india-saffron transition-colors" />
                     </div>
                     <div>
                       <div className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-india-saffron transition-colors leading-tight">
                         {item.label}
                       </div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-tight">
+                      <div className="text-xs text-gray-500 dark:text-light-yellow mt-1 leading-tight">
                         {item.description}
                       </div>
                     </div>
@@ -128,7 +128,7 @@ const MobileNav = () => {
         <div className="px-4 pb-4">
           <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
             <h4
-              className={`text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3 ${isRTL ? "text-right" : ""}`}
+              className={`text-xs font-semibold text-gray-500 dark:text-light-yellow uppercase tracking-wide mb-3 ${isRTL ? "text-right" : ""}`}
             >
               Quick Actions
             </h4>

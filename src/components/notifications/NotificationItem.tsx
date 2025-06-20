@@ -42,7 +42,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({ notification }) => 
       case 'low':
         return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
       default:
-        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white';
     }
   };
 
@@ -59,7 +59,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({ notification }) => 
         
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between mb-1">
-            <h4 className="text-sm font-medium text-gray-900 dark:text-gray-100 truncate">
+            <h4 className="text-sm font-medium text-gray-900 dark:text-white truncate">
               {notification.title}
             </h4>
             <Badge 
