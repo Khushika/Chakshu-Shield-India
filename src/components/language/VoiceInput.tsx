@@ -81,9 +81,9 @@ const languageConfigs = {
     code: "ta-IN",
     name: "தமிழ்",
     sampleText:
-      "நான் நேற்று ஒரு மோசடி அழைப்பு வந்ததை தெரிவிக்க விரும்புகிறேன். யாரோ என் வங்கியின் பெயரில் என் PIN கேட்டார்கள்।",
+      "நான் நே��்று ஒரு மோசடி அழைப்பு வந்ததை தெரிவிக்க விரும்புகிறேன். யாரோ என் வங்கியின் பெயரில் என் PIN கேட்டார்கள்।",
     prompts: {
-      start: "பேசத் தொடங்க மைக்ரோஃபோனைக் கி���ிக் செய்யவும்",
+      start: "பேசத் தொடங்க மைக்ரோஃபோனைக் கிளிக் செய்யவும்",
       listening: "கேட்கிறேன்... தெளிவாக பேசுங்கள்",
       processing: "உங்கள் பேச்சை புரிந்துகொள்கிறேன்...",
       ready: "குரல் உள்ளீட்டைத் தொடங்க கிளிக் செய்யவும்",
@@ -132,7 +132,7 @@ const languageConfigs = {
       "मला काल आलेल्या फसवणूक कॉलबद्दल तक्रार करायची आहे. कोणीतरी माझ्या बँकेच्या नावाने माझा PIN विचारला होता।",
     prompts: {
       start: "बोलण्यास सुरुवात करण्यासाठी मायक्रोफोनवर क्लिक करा",
-      listening: "ऐकत आहे... स्पष्टपणे बोला",
+      listening: "ऐकत आहे... ���्पष्टपणे बोला",
       processing: "तुमचे भाषण समजून घेत आहे...",
       ready: "व्हॉइस इनपुट सुरू करण्यासाठी क्लिक करा",
     },
@@ -608,16 +608,75 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
 
     if ("speechSynthesis" in window) {
       setIsSpeaking(true);
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = currentLang.code;
-      utterance.rate = 0.85;
-      utterance.pitch = 1.0;
-      utterance.volume = 0.9;
 
-      utterance.onend = () => setIsSpeaking(false);
-      utterance.onerror = () => setIsSpeaking(false);
+      // Wait for voices to be loaded
+      const speak = () => {
+        const utterance = new SpeechSynthesisUtterance(text);
 
-      speechSynthesis.speak(utterance);
+        // Get available voices
+        const voices = speechSynthesis.getVoices();
+
+        // Find the best voice for the current language
+        let selectedVoice = voices.find(
+          (voice) =>
+            voice.lang === currentLang.code ||
+            voice.lang.startsWith(currentLang.code.split("-")[0]),
+        );
+
+        // Fallback to any voice with the language prefix
+        if (!selectedVoice) {
+          selectedVoice = voices.find((voice) =>
+            voice.lang.startsWith(currentLang.code.split("-")[0]),
+          );
+        }
+
+        // Final fallback to default voice
+        if (!selectedVoice && voices.length > 0) {
+          selectedVoice = voices[0];
+        }
+
+        if (selectedVoice) {
+          utterance.voice = selectedVoice;
+        }
+
+        utterance.lang = currentLang.code;
+        utterance.rate = language === "hi" || language === "ur" ? 0.75 : 0.85; // Slower for complex scripts
+        utterance.pitch = 1.0;
+        utterance.volume = 0.9;
+
+        utterance.onend = () => {
+          setIsSpeaking(false);
+        };
+
+        utterance.onerror = (event) => {
+          console.warn("Speech synthesis error:", event.error);
+          setIsSpeaking(false);
+          toast({
+            title: "Speech Playback Error",
+            description: "Unable to play audio. Please try again.",
+            variant: "destructive",
+          });
+        };
+
+        speechSynthesis.speak(utterance);
+      };
+
+      // Check if voices are already loaded
+      if (speechSynthesis.getVoices().length > 0) {
+        speak();
+      } else {
+        // Wait for voices to load
+        speechSynthesis.onvoiceschanged = () => {
+          speak();
+          speechSynthesis.onvoiceschanged = null; // Remove listener
+        };
+      }
+    } else {
+      toast({
+        title: "Speech Not Supported",
+        description: "Text-to-speech is not supported in this browser.",
+        variant: "destructive",
+      });
     }
   };
 
