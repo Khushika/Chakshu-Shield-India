@@ -58,9 +58,9 @@
     --bg-tertiary-dark: 215.4 16.3% 25.9%; /* #334155 */
     --bg-input-dark: 215.4 16.3% 35.1%; /* #475569 */
 
-    --text-primary-dark: 210 40% 98%; /* #f8fafc - 18.7:1 contrast */
-    --text-secondary-dark: 210 40% 90%; /* #e2e8f0 - 13.1:1 contrast */
-    --text-muted-dark: 215.4 20.2% 65.1%; /* #94a3b8 - 7.8:1 contrast */
+    --text-primary-dark: 0 0% 100%; /* #FFFFFF - Pure white */
+    --text-secondary-dark: 60 100% 50%; /* #FFFF00 - Light yellow */
+    --text-muted-dark: 0 0% 100%; /* #FFFFFF - White for better readability */
     --text-inverse-dark: 222.2 84% 4.9%; /* #020817 */
 
     --border-primary-dark: 215.4 16.3% 25.9%; /* #334155 */
