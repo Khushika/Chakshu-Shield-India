@@ -70,7 +70,7 @@ const ReportingHistoryTable = ({ filters }: ReportingHistoryTableProps) => {
     },
   ];
 
-  const handleViewDetails = (report: any) => {
+  const handleViewDetails = (report: Report) => {
     setSelectedReport(report);
     setIsModalOpen(true);
   };
