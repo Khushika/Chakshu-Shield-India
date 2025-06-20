@@ -57,7 +57,7 @@ const languageConfigs = {
     code: "bn-IN",
     name: "বাংলা",
     sampleText:
-      "আমি গতকাল একটি জালিয়াতি কল পেয়েছি যা রিপোর্ট করতে চাই। কেউ আমার ব্যাংকের নাম করে আমার PIN চেয়েছিল।",
+      "আমি গতকা��� একটি জালিয়াতি কল পেয়েছি যা রিপোর্ট করতে চাই। কেউ আমার ব্যাংকের নাম করে আমার PIN চেয়েছিল।",
     prompts: {
       start: "কথা বলা শুরু করতে মাইক্রোফোনে ক্লিক করুন",
       listening: "শুনছি... স্পষ্ট করে বলুন",
@@ -72,7 +72,7 @@ const languageConfigs = {
       "నేను నిన్న ఒక మోసపూరిత కాల్ వచ్చిందని రిపోర్ట్ చేయాలని అనుకుంటున్నాను। ఎవరో నా బ్యాంక్ పేరు చెప్పి నా PIN అడిగారు।",
     prompts: {
       start: "మాట్లాడటం ప్రారంభించడానికి మైక్రోఫోన్‌పై క్లిక్ చేయండి",
-      listening: "వింటున్నాను... స్పష్టంగా మాట్లాడండి",
+      listening: "వింటున్నాను... స్పష్టంగా మాట్లాడండ���",
       processing: "మీ మాటలను అర్థం చేసుకుంటున్నాను...",
       ready: "వాయిస్ ఇన్‌పుట్ ప్రారంభించడానికి క్లిక్ చేయండి",
     },
@@ -93,7 +93,7 @@ const languageConfigs = {
     code: "gu-IN",
     name: "ગુજરાતી",
     sampleText:
-      "હું ગઈકાલે આવેલા એક છેતરપિંડીના કોલની જાણ કરવા માંગુ છું. કોઈએ મારી બેંકનું નામ લઈને મારો PIN માગ્યો હતો।",
+      "હું ગઈકાલે આવેલા એક છેતરપિંડીના કોલની જા��� કરવા માંગુ છું. કોઈએ મારી બેંકનું નામ લઈને મારો PIN માગ્યો હતો।",
     prompts: {
       start: "બોલવાનું શરુ કરવા માટે માઇક્રોફોન પર ક્લિક કરો",
       listening: "સાંભળી રહ્યો છું... સ્પષ્ટ બોલો",
@@ -109,7 +109,7 @@ const languageConfigs = {
     prompts: {
       start: "ಮಾತನಾಡಲು ಪ್ರಾರಂಭಿಸಲು ಮೈಕ್ರೋಫೋನ್ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ",
       listening: "ಆಲಿಸುತ್ತಿದ್ದೇನೆ... ಸ್ಪಷ್ಟವಾಗಿ ಮಾತನಾಡಿ",
-      processing: "ನಿಮ್ಮ ಮಾತು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುತ್ತಿದ್ದೇನೆ...",
+      processing: "ನಿಮ್ಮ ಮಾತು ���ರ್ಥಮಾಡಿಕೊಳ್ಳುತ್ತಿದ್ದೇನೆ...",
       ready: "ವಾಯ್ಸ್ ಇನ್‌ಪುಟ್ ಪ್ರಾರಂಭಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ",
     },
   },
@@ -144,9 +144,9 @@ const languageConfigs = {
       "ਮੈਂ ਕੱਲ੍ਹ ਆਈ ਇੱਕ ਧੋਖਾਧੜੀ ਕਾਲ ਬਾਰੇ ਰਿਪੋਰਟ ਕਰਨਾ ਚਾਹੁੰਦਾ ਹਾਂ। ਕਿਸੇ ਨੇ ਮੇਰੇ ਬੈਂਕ ਦੇ ਨਾਮ ਤੇ ਮੇਰਾ PIN ਮੰਗਿਆ ਸੀ।",
     prompts: {
       start: "ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮਾਈਕ੍ਰੋਫੋਨ ਤੇ ਕਲਿੱਕ ਕਰੋ",
-      listening: "ਸੁਣ ਰਿ���ਾ ਹਾਂ... ਸਾਫ਼ ਬੋਲੋ",
+      listening: "ਸੁਣ ਰਿਹਾ ਹਾਂ... ਸਾਫ਼ ਬੋਲੋ",
       processing: "ਤੁਹਾਡੀ ਆਵਾਜ਼ ਸਮਝ ਰਿਹਾ ਹਾਂ...",
-      ready: "ਵਾਇਸ ਇਨਪੁੱਟ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ",
+      ready: "ਵ���ਇਸ ਇਨਪੁੱਟ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ",
     },
   },
   ur: {
@@ -400,12 +400,36 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
         setIsRecording(false);
         setIsProcessing(false);
 
-        // For specific errors, provide helpful toast with retry option
+        // Handle automatic restart for no-speech
+        if (event.error === "no-speech" && retryCount < 2 && isRecording) {
+          setRetryCount((prev) => prev + 1);
+
+          toast({
+            title: "Listening Again...",
+            description: `No speech detected. Automatically retrying (${retryCount + 1}/3)...`,
+          });
+
+          // Restart recognition after a short delay
+          setTimeout(() => {
+            if (isRecording && recognitionRef.current) {
+              try {
+                recognitionRef.current.lang = currentLang.code;
+                recognitionRef.current.start();
+              } catch (restartError) {
+                console.warn("Failed to restart recognition:", restartError);
+              }
+            }
+          }, 1000);
+
+          return; // Don't set recording to false, continue recording
+        }
+
+        // For specific errors, provide helpful toast
         if (event.error === "no-speech") {
           toast({
             title: "No Speech Detected",
             description:
-              "Please speak closer to your microphone and ensure your voice is clear. The microphone is sensitive and requires clear speech.",
+              "Please speak closer to your microphone. Ensure you're in a quiet environment and speak clearly.",
           });
         } else {
           toast({
