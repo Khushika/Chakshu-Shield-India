@@ -118,7 +118,7 @@ const LanguageSelector: React.FC = () => {
 
           return (
             <div key={groupName}>
-              <DropdownMenuLabel className="text-xs font-medium text-gray-500 dark:text-gray-400 px-3 py-1 uppercase tracking-wide">
+              <DropdownMenuLabel className="text-xs font-medium text-gray-500 dark:text-light-yellow px-3 py-1 uppercase tracking-wide">
                 {groupName}
               </DropdownMenuLabel>
 
@@ -145,7 +145,7 @@ const LanguageSelector: React.FC = () => {
                         <span className="font-medium text-sm">
                           {lang.nativeName}
                         </span>
-                        <span className="text-xs text-gray-500 dark:text-gray-400">
+                        <span className="text-xs text-gray-500 dark:text-light-yellow">
                           {lang.name}
                         </span>
                       </div>
@@ -177,7 +177,7 @@ const LanguageSelector: React.FC = () => {
         })}
 
         {/* Language support info */}
-        <div className="px-3 py-2 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
+        <div className="px-3 py-2 text-xs text-gray-500 dark:text-light-yellow border-t border-gray-200 dark:border-gray-700">
           <div className="flex items-center justify-between">
             <span>
               {currentLanguage === "en"

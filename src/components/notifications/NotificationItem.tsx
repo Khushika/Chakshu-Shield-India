@@ -70,7 +70,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({ notification }) => 
             </Badge>
           </div>
           
-          <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+          <p className="text-sm text-gray-600 dark:text-white line-clamp-2">
             {notification.message}
           </p>
           

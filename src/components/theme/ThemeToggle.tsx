@@ -166,7 +166,7 @@ const ThemeToggle: React.FC = () => {
         >
           <CurrentIcon
             className={`h-4 w-4 transition-all duration-300 ${
-              isDark ? "text-yellow-400" : "text-gray-600 dark:text-gray-400"
+              isDark ? "text-yellow-400" : "text-gray-600 dark:text-light-yellow"
             }`}
             aria-hidden="true"
           />
@@ -203,7 +203,7 @@ const ThemeToggle: React.FC = () => {
 
         {/* Theme Options */}
         <div className="px-2 py-1">
-          <div className="text-xs font-medium text-gray-500 dark:text-gray-400 px-2 py-1 uppercase tracking-wide">
+          <div className="text-xs font-medium text-gray-500 dark:text-light-yellow px-2 py-1 uppercase tracking-wide">
             {currentLanguage === "en"
               ? "Theme Mode"
               : currentLanguage === "hi"
@@ -241,7 +241,7 @@ const ThemeToggle: React.FC = () => {
                           </span>
                         )}
                       </span>
-                      <span className="text-xs text-gray-500 dark:text-gray-400">
+                      <span className="text-xs text-gray-500 dark:text-light-yellow">
                         {option.description}
                       </span>
                     </div>
@@ -282,7 +282,7 @@ const ThemeToggle: React.FC = () => {
                           ? "اعلیٰ تضاد"
                           : "High Contrast"}
                 </span>
-                <span className="text-xs text-gray-500 dark:text-gray-400">
+                <span className="text-xs text-gray-500 dark:text-light-yellow">
                   {currentLanguage === "en"
                     ? "Enhance visibility for better accessibility"
                     : currentLanguage === "hi"
@@ -328,7 +328,7 @@ const ThemeToggle: React.FC = () => {
         <DropdownMenuSeparator />
 
         {/* Accessibility Status */}
-        <div className="px-3 py-2 text-xs text-gray-500 dark:text-gray-400">
+        <div className="px-3 py-2 text-xs text-gray-500 dark:text-light-yellow">
           <div className="space-y-1">
             <div className="flex items-center justify-between">
               <span>
