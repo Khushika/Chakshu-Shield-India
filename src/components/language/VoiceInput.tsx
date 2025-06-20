@@ -74,7 +74,7 @@ const languageConfigs = {
       start: "మాట్లాడటం ప్రారంభించడానికి మైక్రోఫోన్‌పై క్లిక్ చేయండి",
       listening: "వింటున్నాను... స్పష్టంగా మాట్లాడండి",
       processing: "మీ మాటలను అర్థం చేసుకుంటున్నాను...",
-      ready: "వా���ిస్ ఇన్‌పుట్ ప్రారంభించడానికి క్లిక్ చేయండి",
+      ready: "వాయిస్ ఇన్‌పుట్ ప్రారంభించడానికి క్లిక్ చేయండి",
     },
   },
   ta: {
@@ -93,7 +93,7 @@ const languageConfigs = {
     code: "gu-IN",
     name: "ગુજરાતી",
     sampleText:
-      "હું ગઈકાલે આવેલા એક છેતરપિંડીના કોલની જાણ કરવા માંગુ છું. કોઈએ મારી બેંકનું નામ લઈન�� મારો PIN માગ્યો હતો।",
+      "હું ગઈકાલે આવેલા એક છેતરપિંડીના કોલની જાણ કરવા માંગુ છું. કોઈએ મારી બેંકનું નામ લઈને મારો PIN માગ્યો હતો।",
     prompts: {
       start: "બોલવાનું શરુ કરવા માટે માઇક્રોફોન પર ક્લિક કરો",
       listening: "સાંભળી રહ્યો છું... સ્પષ્ટ બોલો",
@@ -129,7 +129,7 @@ const languageConfigs = {
     code: "mr-IN",
     name: "मराठी",
     sampleText:
-      "मला काल आलेल्या फसवणूक क���लबद्दल तक्रार करायची आहे. कोणीतरी माझ्या बँकेच्या नावाने माझा PIN विचारला होता।",
+      "मला काल आलेल्या फसवणूक कॉलबद्दल तक्रार करायची आहे. कोणीतरी माझ्या बँकेच्या नावाने माझा PIN विचारला होता।",
     prompts: {
       start: "बोलण्यास सुरुवात करण्यासाठी मायक्रोफोनवर क्लिक करा",
       listening: "ऐकत आहे... स्पष्टपणे बोला",
@@ -1071,9 +1071,18 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
           <Alert className="border-blue-200 bg-blue-50 dark:bg-gray-800">
             <Info className="h-4 w-4 text-blue-600" />
             <AlertDescription className="text-blue-800 dark:text-white text-sm">
-              <strong>Tips:</strong> Speak clearly and at normal pace. The
-              system supports multiple Indian languages. Your speech is
-              processed locally for privacy.
+              <strong>Microphone Tips:</strong>
+              <ul className="mt-2 space-y-1 text-xs">
+                <li>• Position microphone 6-12 inches from your mouth</li>
+                <li>
+                  • Speak clearly and at normal volume (not too loud or soft)
+                </li>
+                <li>• Ensure you're in a quiet environment</li>
+                <li>
+                  • Check that audio level shows "Good" (green) while speaking
+                </li>
+                <li>• Wait for "Speech detected" indicator before speaking</li>
+              </ul>
             </AlertDescription>
           </Alert>
         </CardContent>
