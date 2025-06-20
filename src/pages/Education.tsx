@@ -26,8 +26,6 @@ const Education = () => {
           {/* Navigation Buttons */}
           <NavigationButtons />
 
-          <EnhancedLanguageFeatures />
-
           <FraudIdentificationGuide />
 
           <VideoTutorials />
