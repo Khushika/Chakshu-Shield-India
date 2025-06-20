@@ -22,8 +22,17 @@ interface ReportingHistoryTableProps {
   };
 }
 
+interface Report {
+  id: string;
+  date: string;
+  type: string;
+  description: string;
+  status: string;
+  impact: string;
+}
+
 const ReportingHistoryTable = ({ filters }: ReportingHistoryTableProps) => {
-  const [selectedReport, setSelectedReport] = useState<any>(null);
+  const [selectedReport, setSelectedReport] = useState<Report | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const reports = [
