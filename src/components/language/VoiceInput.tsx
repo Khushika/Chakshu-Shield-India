@@ -814,6 +814,76 @@ const VoiceInput: React.FC<VoiceInputProps> = ({
     speakText(currentLang.sampleText);
   };
 
+  const testMicrophone = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const audioContext = new AudioContext();
+      const analyser = audioContext.createAnalyser();
+      const microphone = audioContext.createMediaStreamSource(stream);
+
+      microphone.connect(analyser);
+      analyser.fftSize = 256;
+
+      let testDuration = 0;
+      let maxLevel = 0;
+
+      const testAudio = () => {
+        const dataArray = new Uint8Array(analyser.frequencyBinCount);
+        analyser.getByteFrequencyData(dataArray);
+        const rms = Math.sqrt(
+          dataArray.reduce((sum, value) => sum + value * value, 0) /
+            dataArray.length,
+        );
+        const level = (rms / 30) * 100;
+
+        maxLevel = Math.max(maxLevel, level);
+        testDuration += 100;
+
+        if (testDuration < 3000) {
+          setTimeout(testAudio, 100);
+        } else {
+          // Test complete
+          stream.getTracks().forEach((track) => track.stop());
+          audioContext.close();
+
+          if (maxLevel > 15) {
+            toast({
+              title: "Microphone Test Passed",
+              description: `Great! Your microphone is working well (max level: ${Math.round(maxLevel)}%)`,
+            });
+          } else if (maxLevel > 5) {
+            toast({
+              title: "Microphone Detected",
+              description: `Microphone is working but audio is low (max level: ${Math.round(maxLevel)}%). Try speaking louder.`,
+              variant: "destructive",
+            });
+          } else {
+            toast({
+              title: "Microphone Issue",
+              description:
+                "Very low audio detected. Please check your microphone settings and try again.",
+              variant: "destructive",
+            });
+          }
+        }
+      };
+
+      toast({
+        title: "Testing Microphone",
+        description: "Please speak normally for 3 seconds...",
+      });
+
+      testAudio();
+    } catch (error) {
+      toast({
+        title: "Microphone Test Failed",
+        description:
+          "Unable to access microphone. Please check permissions and try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
   if (hasPermission === false) {
     return (
       <Card className="w-full border-red-200">
