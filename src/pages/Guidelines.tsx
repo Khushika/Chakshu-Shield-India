@@ -193,7 +193,7 @@ const Guidelines = () => {
                       className={`w-full text-left p-3 rounded-lg transition-all duration-200 flex items-center ${
                         activeSection === item.id
                           ? "bg-india-saffron text-white"
-                          : "hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
+                          : "hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-white"
                       }`}
                     >
                       <span className="mr-3 text-lg">{item.icon}</span>
@@ -221,10 +221,10 @@ const Guidelines = () => {
                       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
                         Government of India
                       </h2>
-                      <p className="text-gray-600 dark:text-gray-300">
+                      <p className="text-gray-600 dark:text-white">
                         Ministry of Communications
                       </p>
-                      <p className="text-gray-600 dark:text-gray-300">
+                      <p className="text-gray-600 dark:text-white">
                         Department of Telecommunications
                       </p>
                     </div>
@@ -247,7 +247,7 @@ const Guidelines = () => {
                       Terms and Conditions
                     </h2>
 
-                    <div className="space-y-6 text-gray-700 dark:text-gray-300">
+                    <div className="space-y-6 text-gray-700 dark:text-white">
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                           1.1 ACCEPTANCE OF TERMS
@@ -337,7 +337,7 @@ const Guidelines = () => {
                       Privacy Policy
                     </h2>
 
-                    <div className="space-y-6 text-gray-700 dark:text-gray-300">
+                    <div className="space-y-6 text-gray-700 dark:text-white">
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                           2.1 INFORMATION COLLECTION
@@ -431,7 +431,7 @@ const Guidelines = () => {
                       Reporting Guidelines
                     </h2>
 
-                    <div className="space-y-6 text-gray-700 dark:text-gray-300">
+                    <div className="space-y-6 text-gray-700 dark:text-white">
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                           3.1 WHAT TO REPORT
@@ -521,7 +521,7 @@ const Guidelines = () => {
                       Community Guidelines
                     </h2>
 
-                    <div className="space-y-6 text-gray-700 dark:text-gray-300">
+                    <div className="space-y-6 text-gray-700 dark:text-white">
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                           4.1 RESPECTFUL COMMUNICATION
@@ -586,7 +586,7 @@ const Guidelines = () => {
                       Data Protection Policy
                     </h2>
 
-                    <div className="space-y-6 text-gray-700 dark:text-gray-300">
+                    <div className="space-y-6 text-gray-700 dark:text-white">
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                           5.1 DATA CLASSIFICATION
@@ -665,7 +665,7 @@ const Guidelines = () => {
                       Acceptable Use Policy
                     </h2>
 
-                    <div className="space-y-6 text-gray-700 dark:text-gray-300">
+                    <div className="space-y-6 text-gray-700 dark:text-white">
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                           6.1 PERMITTED USES
@@ -730,7 +730,7 @@ const Guidelines = () => {
                       Disclaimer
                     </h2>
 
-                    <div className="space-y-6 text-gray-700 dark:text-gray-300">
+                    <div className="space-y-6 text-gray-700 dark:text-white">
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                           7.1 SERVICE AVAILABILITY
@@ -809,7 +809,7 @@ const Guidelines = () => {
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                             General Inquiries
                           </h3>
-                          <div className="space-y-2 text-gray-700 dark:text-gray-300">
+                          <div className="space-y-2 text-gray-700 dark:text-white">
                             <p>
                               <strong>Email:</strong> support@chakshu.gov.in
                             </p>
@@ -827,7 +827,7 @@ const Guidelines = () => {
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                             Technical Support
                           </h3>
-                          <div className="space-y-2 text-gray-700 dark:text-gray-300">
+                          <div className="space-y-2 text-gray-700 dark:text-white">
                             <p>
                               <strong>Email:</strong>{" "}
                               tech-support@chakshu.gov.in
@@ -843,7 +843,7 @@ const Guidelines = () => {
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                             Emergency Fraud Reporting
                           </h3>
-                          <div className="space-y-2 text-gray-700 dark:text-gray-300">
+                          <div className="space-y-2 text-gray-700 dark:text-white">
                             <p>
                               <strong>Available:</strong> 24/7
                             </p>
@@ -861,7 +861,7 @@ const Guidelines = () => {
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                             Legal Concerns
                           </h3>
-                          <div className="space-y-2 text-gray-700 dark:text-gray-300">
+                          <div className="space-y-2 text-gray-700 dark:text-white">
                             <p>
                               <strong>Email:</strong> legal@chakshu.gov.in
                             </p>
@@ -872,7 +872,7 @@ const Guidelines = () => {
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                             Postal Address
                           </h3>
-                          <div className="space-y-2 text-gray-700 dark:text-gray-300">
+                          <div className="space-y-2 text-gray-700 dark:text-white">
                             <p>Department of Telecommunications</p>
                             <p>Ministry of Communications</p>
                             <p>Government of India</p>

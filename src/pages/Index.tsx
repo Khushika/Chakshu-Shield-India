@@ -50,7 +50,7 @@ const Index = () => {
                 </Button>
               </Link>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-sm text-gray-600 dark:text-white max-w-2xl mx-auto">
               Join thousands of Indians in the fight against fraud. Report
               incidents, track trends, and help build a safer digital ecosystem
               for everyone.
@@ -68,7 +68,7 @@ const Index = () => {
             <Button
               variant="outline"
               onClick={() => setShowReportForm(false)}
-              className="mb-4 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+              className="mb-4 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
             >
               ← Back to Home
             </Button>
