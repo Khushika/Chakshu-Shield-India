@@ -13,9 +13,12 @@ import ReportDetailsModal from "./ReportDetailsModal";
 
 interface ReportingHistoryTableProps {
   filters: {
-    dateRange: string;
-    type: string;
-    status: string;
+    dateRange: { preset: string };
+    status: string[];
+    fraudTypes: string[];
+    severity: string[];
+    location: string;
+    amountRange: any;
   };
 }
 
