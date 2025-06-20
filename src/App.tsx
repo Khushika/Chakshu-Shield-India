@@ -26,6 +26,7 @@ import TAFCOPCheck from "./pages/TAFCOPCheck";
 import KYMVerification from "./pages/KYMVerification";
 import InternationalCallReport from "./pages/InternationalCallReport";
 import WirelineISPCheck from "./pages/WirelineISPCheck";
+import VoiceReporting from "./pages/VoiceReporting";
 import Guidelines from "./pages/Guidelines";
 import NotFound from "./pages/NotFound";
 
@@ -92,6 +93,10 @@ const App = () => (
                     <Route
                       path="/services/wireline-isp"
                       element={<WirelineISPCheck />}
+                    />
+                    <Route
+                      path="/voice-reporting"
+                      element={<VoiceReporting />}
                     />
                     <Route path="/guidelines" element={<Guidelines />} />
                     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
